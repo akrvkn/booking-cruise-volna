@@ -1,0 +1,63 @@
+<div class="entry">
+<fieldset class="search-wrapper">
+    <legend class="search-title">
+        <span class="search-com">КРУИЗ-ВОЛНА</span>
+        <span class="search-reset">поиск речных круизов</span>
+        <span class="search-divider"></span>
+    </legend>
+    <div class="search-content">
+    <form action="/raspisaniye">
+    <div class="search-container">
+        <div>
+            <label for="season">Сезон</label><br>
+            <select id="season" name="season">
+                <option value="2020">2020</option>
+                <option value="2021" disabled="disabled">2021</option>
+            </select>
+        </div>
+        <div>
+            <label for="month">Месяц</label><br>
+            <select id="month" name="date_from">
+                <option value="">Любой</option>
+                <option value="01/04/2020">Апрель</option>
+                <option value="01/05/2020">Май</option>
+                <option value="01/06/2020">Июнь</option>
+                <option value="01/07/2020">Июль</option>
+                <option value="01/08/2020">Август</option>
+                <option value="01/09/2020">Сентябрь</option>
+                <option value="01/10/2020">Октябрь</option>
+            </select>
+        </div>
+        <div>
+            <label for="days">Дней</label><br>
+            <select id="days" name="days">
+                <option value="">Не важно</option>
+                <option value="3">До 3</option>
+                <option value="7">От 3 до 10</option>
+                <option value="10">Больше 10</option>
+            </select>
+        </div>
+        <div id="cities">
+            <label for="city">Направление</label><br>
+            <select id="city" name="city">
+                <option value="">Все</option>
+                <option value="Петербург">Санкт-Петербург</option>
+                <option value="Кижи">Кижи</option>
+                <option value="Валаам">Валаам</option>
+                <option value="Соловецкие">Соловецкие о-ва</option>
+                <option value="Новгород">Н.Новгород</option>
+                <option value="Плес">Плес</option>
+                <option value="Казань">Казань</option>
+                <option value="Пермь">Пермь</option>
+                <option value="Астрахань">Астрахань</option>
+                <option value="Константиново">по Оке</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Искать" />
+        </div>
+    </div>
+    </form>
+    </div>
+</fieldset>
+</div>

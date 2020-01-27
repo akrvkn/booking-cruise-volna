@@ -1,0 +1,30 @@
+{% include header/head.html %}
+<body>
+{% include loader.html %}
+{% include header/header.html %}
+{% include header/section-banner.html %}
+
+<!-- START SECTION BLOG -->
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="single_post">
+                    <div class="blog_content bg-white">
+                        <div class="blog_text">
+                            {{ content }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION BLOG -->
+
+{% include sections/subscribe.html %}
+{% include footer/footer.html %}
+<a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+{% include footer/scripts.html %}
+</body>
+</html>

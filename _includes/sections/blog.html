@@ -1,0 +1,23 @@
+<!-- START SECTION BLOG -->
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="row blog_thumbs">
+                    {% for post in site.posts limit:10 %}
+                    <div class="col-md-12 mb-md-4 mb-2 pb-2">
+                        <div class="blog_post">
+                            <div class="blog_content bg-white">
+                                <div class="blog_text">
+                                    <h6 class="blog_title"><a href="{{ post.url }}"><i class="ion-ios-plus-outline"></i> {{ post.title }}</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION BLOG -->

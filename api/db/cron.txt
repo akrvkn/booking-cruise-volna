@@ -1,0 +1,3 @@
+45 2 * * * cd ~/github/akrvkn.github.io/api/db; /usr/bin/php api-import.php > cron.log;
+github A 185.199.108.153
+gitlab A 35.185.44.232
