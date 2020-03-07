@@ -28,6 +28,10 @@ var ru_RU = {
 
 var ul = $('#ships-list');
 
+$.get('/api/db/ships.json', function(data){
+    console.log(data);
+});
+
 if(ul.length > 0) {
     var mtf_ships = $.getJSON('/api/db/mtfships.json');
     var mtf_ships_images = $.getJSON('/api/db/mtfimages.json');
