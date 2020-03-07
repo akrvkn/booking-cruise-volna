@@ -308,6 +308,7 @@ moment.locale('ru');
 
                             var table = '<table class="table table-striped table-bordered">';
                             $.each(cabins, function (m, n) {
+                                console.log(n);
                                 if (n !== undefined) {
                                     table += n;
                                 }
