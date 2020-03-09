@@ -8347,7 +8347,9 @@ body.switch-open {
 }
 
 .ships-list {
-	background: #f5f5f5; }
+	background: #f5f5f5;
+	padding-top: 30px;
+}
 .ships-list h1 {
 	text-align: center;
 	font-family: arial;
