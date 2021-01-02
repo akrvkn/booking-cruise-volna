@@ -1,5 +1,5 @@
-
-var ajax_url = '/api/db/cruises.json';
+moment.locale('ru');
+var ajax_url = '/api/ajax/cruises.json';
 var booking_url = '/detailes?com=inf&tour=';
 var mtf_url = '/detailes?com=mtf&tour=';
 var vdh_url = '/detailes?com=vdh&tour=';
@@ -26,44 +26,6 @@ var ru_RU = {
     }
 };
 
-var ul = $('#ships-list');
-
-$.get('/api/db/ships.json', function(data){
-    console.log(data);
-});
-
-if(ul.length > 0) {
-    var mtf_ships = $.getJSON('/api/db/mtfships.json');
-    var mtf_ships_images = $.getJSON('/api/db/mtfimages.json');
-    var ships = $.getJSON('/api/db/ships.json');
-    var ships_images = $.getJSON('api/db/shipsimages.json');
-
-    $.when(mtf_ships, mtf_ships_images, ships, ships_images)
-        .done(function (mtf_ships, mtf_ships_images, ships, ships_images) {
-            // Executed when both requests complete successfully
-            // Both results are available here
-
-            renderShipsList(mtf_ships[0], mtf_ships_images[0], 'mtf');
-            renderShipsList(ships[0], ships_images[0], 'inf');
-
-        });
-}
-
-function renderShipsList(ships, images, com){
-    return $.map(ships, function(ship, i) {
-        if(images[i]) {
-            var li = $('<li>'),
-                img = $('<img>', {'src': images[i], 'width': 150}),
-                span = $('<span>'),
-                a = $('<a>', { 'href': '/ship?com=' + com + '&ship=' + i, 'html': ship});
-            span.append(a);
-            li.append(img);
-            li.append(span);
-            ul.append(li);
-        }
-    });
-}
-
 
 function compare(a,b) {
     if (a.tourstart < b.tourstart)
@@ -85,6 +47,31 @@ function parseUrlQuery(q) {
             }
             return res;
         }
+
+function getUrlParams (uri) {
+    // http://stackoverflow.com/a/23946023/2407309
+    if (typeof uri == 'undefined') {
+        uri = window.location.search
+    }
+    var url = uri.split('#')[0]; // Discard fragment identifier.
+    var urlParams = {};
+    var queryString = url.split('?')[1];
+    if (!queryString) {
+        if (url.search('=') !== false) {
+            queryString = url
+        }
+    }
+    if (queryString) {
+        var keyValuePairs = queryString.split('&');
+        for (var i = 0; i < keyValuePairs.length; i++) {
+            var keyValuePair = keyValuePairs[i].split('=');
+            var paramName = keyValuePair[0];
+            var paramValue = keyValuePair[1] || '';
+            urlParams[paramName] = decodeURIComponent(paramValue.replace(/\+/g, ' '))
+        }
+    }
+    return urlParams;
+}
 
 $.fn.dataTable.ext.search.push(
     function( settings, data, dataIndex ) {
@@ -176,7 +163,6 @@ $.fn.dataTableExt.afnFiltering.push(
         return false;
     }
 );
-
 
 (function($){
     $(document).ready(function() {
