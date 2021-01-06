@@ -1,5 +1,5 @@
 moment.locale('ru');
-var ajax_url = '/api/ajax/cruises.json';
+var ajax_url = 'https://www.cruise-volna.ru/api/ajax/cruises.json';
 var booking_url = '/detailes?com=inf&tour=';
 var mtf_url = '/detailes?com=mtf&tour=';
 var vdh_url = '/detailes?com=vdh&tour=';
@@ -243,7 +243,7 @@ $.fn.dataTableExt.afnFiltering.push(
                             link = vdh_url;
                         }
 
-                        return '<a href="' + link + row.tourid + '&ship=' + row.shipid + '">' + row.tourroute + '</a>';
+                        return '<a href="' + link + row.tourid + '&ship=' + row.shipid + '" target="_blank">' + row.tourroute + '</a>';
 
                     },
                     "targets": [4]

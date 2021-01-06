@@ -294,8 +294,8 @@ moment.locale('ru');
         function renderDetailsVDH() {
             var shipid = parseUrlQuery('ship');
             var tourid = parseUrlQuery('tour');
-            var ships_url = 'api/ajax/data/vdh/motorships.json';//'https://api.vodohod.com/json/v2/motorships.php?pauth=';
-            var tour_url = 'api/ajax/data/vdh/' + shipid + '/' + tourid + '.json';
+            var ships_url = 'https://www.cruise-volna.ru/api/ajax/data/vdh/motorships.json';//'https://api.vodohod.com/json/v2/motorships.php?pauth=';
+            var tour_url = 'https://www.cruise-volna.ru/api/ajax/data/vdh/' + shipid + '/' + tourid + '.json';
 
 
             $.getJSON(ships_url)
