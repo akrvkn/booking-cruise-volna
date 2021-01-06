@@ -291,7 +291,50 @@ moment.locale('ru');
             return excursions;
         }
 
+        function renderDetailsVDH() {
+            var shipid = parseUrlQuery('ship');
+            var tourid = parseUrlQuery('tour');
+            var ships_url = 'api/ajax/data/vdh/motorships.json';//'https://api.vodohod.com/json/v2/motorships.php?pauth=';
+            var tour_url = 'api/ajax/data/vdh/' + shipid + '/' + tourid + '.json';
 
+
+            $.getJSON(ships_url)
+                .done(function (data) {
+                    $('.shipname').html('<hr><h2>т/х "' + data[shipid]['name'] + '"</h2>');
+                    $("input[name='ship']").val(data[shipid]['name']);
+                    $('.shipimg').html('<img src="/assets/img/vdh/'+ data[shipid]['code'] + '.jpg" width="550" />');
+                    $('.deckplan').html('<a href="' + data[shipid]['decks'] + '" data-lightbox="deckplan"><img src="' + data[shipid]['decks'] + '" width="350" /></a>');
+                    $('.description').html( data[shipid]['description']);
+                });
+
+            $.getJSON(tour_url)
+                .done(function (tours) {
+                    $('.cruise-meta').append('<li>' + tours['name'] + '</li>').append('<li>Дата круиза: ' + moment(tours['dateStart']).format('DD.MM.YYYY') + ' - ' + moment(tours['dateStop']).format('DD.MM.YYYY') + ' ( ' + tours['days'] + ' дн.)' + ' </li>');
+                    $("input[name='tour']").val(tours['name']);
+                    $("input[name='date']").val(tours['dateStart']);
+                    $.each(tours.tariffs[0].prices, function (id, row) {
+                        var available = row.hasOwnProperty('available') === true ? row['available'] : '0';
+                        var cabins_table = '<tr>' +
+                            '<td>' + row['price_name'] + '</td>' +
+                            '<td>' + row['rt_name'] + '</td>' +
+                            '<td>' + row['rp_name'] + '</td>' +
+                            '<td>' + row['price_value'] + '</td>' +
+                            '<td>' + available + '</td>' +
+                            '</tr>';
+                        $('#tourcabins').append(cabins_table);
+                    });
+                    var ex = '';
+                    $.each(tours.routeDays, function (id, row) {
+                        ex = '<tr><td width="100">' + row.portName + '</td>' +
+                            '<td width="120">' + row.timeStart.substr(0, 5) + '</td>' +
+                            '<td width="120">' + row.timeStop.substr(0, 5) + '</td>' +
+                            '<td>' + row.excursionHtml + '</td></tr>';
+                        $('#program').append(ex);
+                    });
+
+
+                });//end tours callback
+        }
 
         function renderDetailsVDHv2() {
             var shipid = parseUrlQuery('ship');
@@ -345,7 +388,7 @@ moment.locale('ru');
                 renderMTFv3();
                 break;
             case 'vdh':
-                renderDetailsVDHv2();
+                renderDetailsVDH();
                 break;
             case 'inf':
                 renderIFF();
