@@ -243,7 +243,7 @@ moment.locale('ru');
 
         function renderCabins(cabinsData){
             //console.log('data:', cabinsData);
-            const tCabins = $('#tourcabins tbody');
+            const tCabins = $('#tourcabins');
             $.each(cabinsData, function(i, el){
                 if(el.name !== 'Служебная') {
                     let cabinsHTML = '<tr>' +
