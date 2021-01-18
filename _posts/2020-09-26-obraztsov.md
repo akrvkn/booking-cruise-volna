@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: single
 title: Открылись продажи на теплоход С. Образцов
 ---
 

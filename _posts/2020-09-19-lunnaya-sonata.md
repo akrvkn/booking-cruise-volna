@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: single
 title: Снижены цены на теплоход "Лунная соната"
 ---
 
