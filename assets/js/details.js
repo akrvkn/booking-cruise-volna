@@ -94,10 +94,6 @@ moment.locale('ru');
                         co++;
                     }
                 });
-                console.log(dataSet);
-                if( dataSet.length > 0 ) {
-
-                }
             });
 
             $.getJSON(cruise_url)
@@ -107,30 +103,27 @@ moment.locale('ru');
                     $("input[name='tour']").val(data['route']);
                     $("input[name='date']").val(data['dateStart'] );
                     const dataSet = [];
-                    $.each(data['timetable'], function (i, v){
-                        dataSet[i] = {};
-                        dataSet[i]['city'] = v['place'];
-                        dataSet[i]['date_start'] = moment(v['dateArrival'], 'YYYY-MM-DDTHH:mm:ss+03:00').format('YYYY-MM-DD HH:mm');
-                        dataSet[i]['date_end'] = moment(v['dateDeparture'], 'YYYY-MM-DDTHH:mm:ss+03:00').format('YYYY-MM-DD HH:mm');
-                        dataSet[i]['description'] = v['description'];
-                    });
-                    if (data.length !== 0) {
-                        console.log(dataSet);
-                        $('.program').prepend('<h2>Программа круиза</h2>');
-                        var program = $('#program').DataTable({
-                            "dom": 'rt',
-                            "searching": false,
-                            "ordering": false,
-                            "data": dataSet,
-                            "language": ru_RU,
-                            "columns": [
-                                {"data": "city", "class": "dt-cell-city", "title": "Остановка"},
-                                {"data": "date_start", "class": "dt-cell-cat", "title": "Дата прибытия"},
-                                {"data": "date_end", "class": "dt-cell-price", "title": "Дата отхода"},
-                                {"data": "description", "class": "dt-cell-places", "title": "Программа"}
-                            ]
+                    let ex = '';
 
-                        });//end datatable
+                    if (data['timetable'] && data['timetable'].length > 0) {
+                        $.each(data['timetable'], function (i, v){
+                            dataSet[i] = {};
+                            dataSet[i]['city'] = v['place'];
+                            dataSet[i]['date_start'] = moment(v['dateArrival'], 'YYYY-MM-DDTHH:mm:ss+03:00').format('YYYY-MM-DD HH:mm');
+                            dataSet[i]['date_end'] = moment(v['dateDeparture'], 'YYYY-MM-DDTHH:mm:ss+03:00').format('YYYY-MM-DD HH:mm');
+                            dataSet[i]['description'] = v['description'] === null ? '' : v['description'];
+                        });
+                        //console.log(dataSet);
+                        $.each(dataSet, function (id, row) {
+                            ex = '<tr><td width="100">' + row.city + '</td>' +
+                                '<td width="120">' + row.date_start + '</td>' +
+                                '<td width="120">' + row.date_end + '</td>' +
+                                '<td>' + row.description + '</td></tr>';
+                            $('#program').append(ex);
+                        });
+                    } else {
+                        // ex = '<tr><td colspan="3"><a href="' + data['timetableDoc'] + '">Программа круиза</a></td>';
+                        // $('#program').append(ex);
                     }
                 });
         }
