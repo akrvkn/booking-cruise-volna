@@ -52,5 +52,78 @@
     <!-- Demo Hosting Style CSS -->
     <link rel="stylesheet" href="/assets/css/demo-hotel.css">
     <link rel="stylesheet" id="layoutstyle" href="/assets/color/theme.css">
-    <link rel="stylesheet" href="/assets/lib/DataTables-1.10.16/css/jquery.dataTables.css" />
+<!--    <link rel="stylesheet" href="/assets/lib/DataTables-1.10.16/css/jquery.dataTables.css" />-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.23/r-2.2.7/datatables.min.css"/>
+    <style>
+        /** modal sber */
+        /*Модальная форма*/
+        .modal_form{
+            width: 400px; /*Ширина формы*/
+            height: 730px; /*Высота формы*/
+            display:none;
+            position: fixed;
+            top:0px;
+            left:0px;
+            bottom:0px;
+            right:0px;
+            margin:auto;
+            background: #fff;
+            border: 1px solid #ccc;
+            z-index: 55;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 150px 0 #000;
+        }
+        /*Кнопка закрыть*/
+        .close_button {
+            position:absolute;
+            right: -10px;
+            top: -10px;
+            z-index: 1000;
+            padding: 0px;
+            margin: 0px;
+            font-family: sans-serif;
+            font-size: 22px;
+            width: 25px;
+            height:25px;
+            border-radius:50%;
+            background-color: #fff;
+            color: #666;
+            text-align:center;
+            border:1px solid #666;
+            cursor:pointer;
+            line-height: 25px;
+        }
+
+        .close_button:hover {
+            background-color: #666;
+            color: #fff;
+        }
+
+        .buy {
+            padding: 1px 5px;
+            font-size: 12px;
+            line-height: 1.5;
+            display: inline-block;
+            color: #00ab10;
+            background-color: transparent;
+            border: 1px solid #00ab10;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            text-decoration: none !important;
+            cursor: pointer;
+            -webkit-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            transition: all .5s ease;
+        }
+
+        .buy:hover{
+            background-color: #00ab10;
+            color: #fff;
+        }
+        .btn_sber {
+            display: none;
+        }
+        /** end modal sber */
+    </style>
 </head>

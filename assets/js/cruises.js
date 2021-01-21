@@ -175,6 +175,7 @@ $.fn.dataTableExt.afnFiltering.push(
         });
         var rivercruises = $('#datatable').DataTable( {
             "dom": '<"dt-top"i>rft<"bottom"p><"clear">',
+            responsive: true,
             "ordering": false,
             "ajax": {
                 "url": ajax_url,
@@ -201,18 +202,20 @@ $.fn.dataTableExt.afnFiltering.push(
             },
             "language":ru_RU,
             "columns": [
-                { "data": "cruisestart", "class": "dt-cell-date", responsivePriority: 0 },
-                { "data": "tourfinish", "class": "dt-cell-date", responsivePriority: 1 },
-                { "data": "tourdays", "class": "dt-cell-days", responsivePriority: 4 },
-                { "data": "shipname", "class": "dt-cell-ship", responsivePriority: 2 },
-                { "data": "tourroute", "class": "dt-cell-route", responsivePriority: 3 },
-                { "data": "tourminprice", "class": "dt-cell-price", responsivePriority: 5 },
-                { "data": "tourcabinsfree", "class": "dt-cell-cabins", responsivePriority: 6 }
+                { "data": "cruisestart", "class": "dt-cell-date" },
+                { "data": "tourfinish", "class": "dt-cell-date" },
+                { "data": "tourdays", "class": "dt-cell-days" },
+                { "data": "shipname", "class": "dt-cell-ship" },
+                { "data": "tourroute", "class": "dt-cell-route" },
+                { "data": "tourminprice", "class": "dt-cell-price" },
+                { "data": "tourcabinsfree", "class": "dt-cell-cabins" }
             ],
             "columnDefs": [
+                { responsivePriority: 1, targets: [0,4] },
+                { responsivePriority: 2, targets: -1 },
                 {
                     "targets": [1, 2, 3, 4, 5, 6],
-                    "sortable": false
+                    "sortable": false,
                 },
                 {
                     "render": function ( data, type, row ) {

@@ -10,7 +10,12 @@
 {% include sections/call2action.html %}
 {% include sections/subscribe.html %}
 {% include footer/footer.html %}
+<div id="mymodalform" class="modal_form">
+    <div class="close_button" onclick="jQuery('#mymodalform').hide();">X</div><!--<iframe src="https://securepayments.sberbank.ru/payment/docsite/payform-1.html?token=e606ukjes6efn3bdniq49jjmr2&ask=amount&ask=email&ask=description" frameborder="0"  scrolling="no" width="100%" height="100%"></iframe>-->
+    <iframe src="https://securepayments.sberbank.ru/payment/docsite/payform-1.html?token=mpecaor2kv18vpb3906enjvdsv&ask=amount&ask=description&ask=email&ask=%7B%22name%22:%22%D0%A4%D0%98%D0%9E%22,%22placeholder%22:%22%22,%22label%22:%22%D0%A4%D0%98%D0%9E%22%7D&ask=%7B%22name%22:%22%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%22,%22placeholder%22:%22%22,%22label%22:%22%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%22%7D" frameborder="0"  scrolling="yes" width="100%" height="100%"></iframe>
+</div>
 <a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
 {% include footer/scripts.html %}
+
 </body>
 </html>

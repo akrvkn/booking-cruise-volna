@@ -7,12 +7,27 @@
     <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav">
-            <li>
-                <a class="nav-link active" href="/">Главная</a>
+            <li class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#">Главная</a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a class="dropdown-item nav-link nav_item" href="/">Главная</a></li>
+                        <li><a class="dropdown-item nav-link nav_item" href="https://booking.cruise-volna.ru">Старая версия сайта</a></li>
+                    </ul>
+                </div>
             </li>
-            <li>
-                <a class="nav-link" href="/raspisaniye">Расписание</a>
+            <li class="dropdown">
+                <a class="nav-link dropdown-toggle" href="#">Расписание</a>
+                <div class="dropdown-menu">
+                    <ul>
+                        <li><a class="dropdown-item nav-link nav_item" href="/raspisaniye">Расписание</a></li>
+                        <li><a class="dropdown-item nav-link nav_item" href="/baikal">Круизы по Байкалу</a></li>
+                    </ul>
+                </div>
             </li>
+<!--            <li>-->
+<!--                <a class="nav-link" href="/raspisaniye">Расписание</a>-->
+<!--            </li>-->
             <li class="dropdown">
                 <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Информация</a>
                 <div class="dropdown-menu">
@@ -21,7 +36,7 @@
 <!--                        <li><a class="dropdown-item nav-link nav_item" href="/ships">Теплоходы</a></li>-->
                         <li><a class="dropdown-item nav-link nav_item" href="/order">Как купить круиз</a></li>
                         <li><a class="dropdown-item nav-link nav_item" href="/eorder">Электронная путёвка</a></li>
-                        <li><a class="dropdown-item nav-link nav_item" href="/menu">Меню ресторанов</a></li>
+                        <li><a class="dropdown-item nav-link nav_item" href="/novichok">Для новичков</a></li>
                         <li><a class="dropdown-item nav-link nav_item" href="/notes">Памятка туристу</a></li>
                     </ul>
                 </div>
@@ -49,7 +64,7 @@
                 <span class="close-search"><i class="ion-ios-close-empty"></i></span>
                 <div class="search_wrap">
                     <form>
-                        <input type="text" placeholder="Search" class="form-control" id="search_input">
+                        <input type="text" placeholder="Искать" class="form-control" id="search_input">
                         <button type="submit" class="search_icon"><i class="ion-ios-search-strong"></i></button>
                     </form>
                 </div>
