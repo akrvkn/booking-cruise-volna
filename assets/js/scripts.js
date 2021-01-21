@@ -855,11 +855,11 @@ PAGE JS
 		var $this = $(this);
 		$this.toggleClass('SeeMore2');
 		if($this.hasClass('SeeMore2')){
-			$this.text('Contact');
+			$this.text('Форма');
 			$('.field_form').hide();
 			$('.map').show();			
 		} else {
-			$this.text('View Map');
+			$this.text('Карта');
 			$('.map').hide();
 			$('.field_form').show();
 		}

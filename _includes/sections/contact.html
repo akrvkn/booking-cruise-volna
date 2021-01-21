@@ -1,0 +1,65 @@
+<!-- START SECTION CONTACT -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.2s">
+                <div class="heading_s2">
+                    <span class="sub_title">Проверить статус</span>
+                    <h2>Проверить Заявку</h2>
+                </div>
+                <p>Заполните форму, и наши менеджеры свяжутся с Вами, как только статус заявки будет проверен.</p>
+                <ul class="contact_info contact_info_style1 list_none">
+                    <li>
+                        <span class="ti-location-pin"></span>
+                        <address>105120,Москва, Хлебников переулок, д. 7, стр. 3, офис 4</address>
+                    </li>
+                    <li>
+                        <span class="ti-email"></span>
+                        <a href="mailto:info@sitename.com">cruise-volna001@yandex.ru</a>
+                    </li>
+                    <li>
+                        <span class="ti-mobile"></span>
+                        <p>+7 (495) 643-43-75</p>
+                    </li>
+                </ul>
+                <span id="map" class="btn btn-outline-black mt-3">Карта</span>
+            </div>
+            <div class="col-lg-8 col-md-6 animation" data-animation="fadeInUp" data-animation-delay="0.4s">
+                <div class="clearfix large_divider d-none d-md-block"></div>
+                <div class="clearfix medium_divider d-xl-none"></div>
+                <div class="field_form">
+                    <form method="post" action="https://script.google.com/macros/s/AKfycbxJKnsYQ-LGsUv28o4afTdkpecilCSFMjf4alVt/exec">
+                        <div class="row">
+                            <div class="form-group col-lg-6">
+                                <input required="required" placeholder="Ваше Имя *" id="first-name" class="form-control" name="name" type="text">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input required="required" placeholder="Ваш Email *" id="email" class="form-control" name="email" type="email">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input required="required" placeholder="Телефон *" id="mobile" class="form-control" name="mobile" type="phone">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input placeholder="Проверить заявку" disabled value="Проверить статус" id="subject" class="form-control" name="subject" type="subject">
+                            </div>
+                            <div class="form-group col-lg-12">
+                                <textarea required="required" placeholder="Теплоход *" id="description" class="form-control" name="message" rows="4"></textarea>
+                            </div>
+                            <div class="col-lg-12">
+                                <button type="submit" title="Отправить" class="btn btn-default" id="submitButton" name="submit" value="Отправить">Отправить</button>
+                            </div>
+                            <div class="col-lg-12">
+                                <div id="alert-msg" class="alert-msg text-center"></div>
+                            </div>
+                            <input type="text" name="phone" value="" size="40" style="position: absolute; left: -10000px;">
+                        </div>
+                    </form>
+                </div>
+                <div class="map">
+                    <script src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=QNZDcWzgQHX8N0lNOW_-AuP5dIaAr7jH&amp;width=100%&amp;height=450" type="text/javascript" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END SECTION CONTACT -->
