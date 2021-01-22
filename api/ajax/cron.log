@@ -1,0 +1,18 @@
+Обновление 242f4b7..a32d763
+Fast-forward
+ _includes/footer/footer.html                 |   4 ++--
+ _includes/forms/yandex-search.html           |   2 ++
+ _includes/header/header.html                 |   2 +-
+ _includes/header/nav.html                    |  11 ++++++-----
+ _includes/plugins/yandex-search-results.html |   1 +
+ _pages/order.md                              |   2 +-
+ _pages/search.md                             |   7 +++++++
+ assets/css/style.css                         |   9 ++++++++-
+ assets/images/banners/prichal.jpg            | Bin 405085 -> 366892 bytes
+ 9 files changed, 28 insertions(+), 10 deletions(-)
+ create mode 100644 _includes/forms/yandex-search.html
+ create mode 100644 _includes/plugins/yandex-search-results.html
+ create mode 100644 _pages/search.md
+[master 9c42823] Updated db 2021-01-22 08:10
+ 2 files changed, 16 insertions(+), 1 deletion(-)
+ create mode 100644 api/ajax/cron.log
