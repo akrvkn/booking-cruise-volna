@@ -1052,6 +1052,13 @@ select option {
 	width: 40px;
 	z-index: 99;
 }
+
+@media only screen and (max-width: 780px) {
+	scrollup {
+		bottom: 110px;
+	}
+}
+
 .scrollup:hover {
 	background-color: #0e93d8;
 	color:#fff;
