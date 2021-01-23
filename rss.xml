@@ -20,3 +20,32 @@ layout: none
         {% endfor %}
     </channel>
 </rss>
+
+<rss xmlns:yandex="http://news.yandex.ru"
+     xmlns:media="http://search.yahoo.com/mrss/"
+     xmlns:turbo="http://turbo.yandex.ru"
+     version="2.0">
+<channel>
+    <!-- Информация о сайте-источнике -->
+    <title>{{ site.company }}</title>
+    <link>{{ site.url }}</link>
+    <description>{{ site.description }}</description>
+    <language>ru</language>
+    <turbo:analytics></turbo:analytics>
+    <turbo:adNetwork></turbo:adNetwork>
+    {% for post in site.posts %}
+    {% unless post.draft %}
+    <item turbo="true">
+        <turbo:extendedHtml>true</turbo:extendedHtml>
+        <link>{{ post.url | prepend: site.url }}</link>
+        <pubDate>T{{ post.date | date_to_xmlschema }}</pubDate>
+        <yandex:related></yandex:related>
+        <title>{{ post.title | xml_escape }}</title>
+        <turbo:content>
+            {{ post.content | xml_escape }}
+        </turbo:content>
+    </item>
+    {% endunless %}
+    {% endfor %}
+</channel>
+</rss>
