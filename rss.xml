@@ -12,7 +12,6 @@ layout: none
     <link>{{ site.url }}</link>
     <description>{{ site.description }}</description>
     <language>ru</language>
-    <turbo:analytics>71442409</turbo:analytics>
     {% for post in site.posts %}
     {% unless post.draft %}
     <item turbo="true">
