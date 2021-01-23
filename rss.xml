@@ -21,9 +21,11 @@ layout: none
         <link>{{ post.url | prepend: site.url }}</link>
         <pubDate>T{{ post.date | date_to_xmlschema }}</pubDate>
         <yandex:related></yandex:related>
-        <title>{{ post.title | xml_escape }}</title>
+
         <turbo:content>
-            {{ post.content | xml_escape }}
+            <![CDATA[
+            {{ post.content  }}
+            ]]>
         </turbo:content>
     </item>
     {% endunless %}
