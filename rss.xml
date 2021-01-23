@@ -15,6 +15,7 @@ layout: none
     {% for post in site.posts %}
     {% unless post.draft %}
     <item turbo="true">
+        <title>{{ popst.title }}</title>
         <turbo:extendedHtml>true</turbo:extendedHtml>
         <link>{{ post.url | prepend: site.url }}</link>
         <pubDate>T{{ post.date | date_to_xmlschema }}</pubDate>
