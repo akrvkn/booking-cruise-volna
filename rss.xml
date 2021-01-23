@@ -9,7 +9,7 @@ layout: none
         <link>{{ site.url }}</link>
         {% for post in site.posts %}
         {% unless post.draft %}
-        <item>
+        <item turbo="true">
             <title>{{ post.title | xml_escape }}</title>
             <description>{{ post.content | xml_escape }}</description>
             <pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
