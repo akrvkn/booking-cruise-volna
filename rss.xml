@@ -12,8 +12,6 @@ layout: none
     <link>{{ site.url }}</link>
     <description>{{ site.description }}</description>
     <language>ru</language>
-    <turbo:analytics></turbo:analytics>
-    <turbo:adNetwork></turbo:adNetwork>
     {% for post in site.posts %}
     {% unless post.draft %}
     <item turbo="true">
