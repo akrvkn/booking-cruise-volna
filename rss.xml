@@ -18,7 +18,7 @@ layout: none
         <title>{{ post.title }}</title>
         <turbo:extendedHtml>true</turbo:extendedHtml>
         <link>{{ post.url | prepend: site.url }}</link>
-        <pubDate>T{{ post.date | date_to_rfc822 }}</pubDate>
+        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <yandex:related></yandex:related>
 
         <turbo:content>
