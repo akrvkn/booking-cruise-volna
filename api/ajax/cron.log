@@ -1,9 +1,11 @@
-Обновление 06f1f4c..786e1d2
+Обновление 9fe5f5a..ca82b03
 Fast-forward
- _includes/footer/footer.html        | 10 +++++-----
- _includes/header/nav.html           |  1 +
- _includes/sections/call2action.html |  2 +-
- 3 files changed, 7 insertions(+), 6 deletions(-)
-[master 790f327] Updated db 2021-01-23 08:10
- 2 files changed, 7 insertions(+), 19 deletions(-)
- rewrite api/ajax/cron.log (98%)
+ _includes/header/head.html          |   1 +
+ _includes/sections/available.html   |   8 +-
+ _posts/2019-07-22-raspisanie2019.md | 630 ------------------------------------
+ rss.xml                             |  33 ++
+ yandex_be31b2853fc77628.html        |   6 +
+ 5 files changed, 44 insertions(+), 634 deletions(-)
+ delete mode 100644 _posts/2019-07-22-raspisanie2019.md
+ create mode 100644 rss.xml
+ create mode 100644 yandex_be31b2853fc77628.html
