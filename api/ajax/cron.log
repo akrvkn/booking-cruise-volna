@@ -1,9 +1,4 @@
-Обновление 06f1f4c..786e1d2
-Fast-forward
- _includes/footer/footer.html        | 10 +++++-----
- _includes/header/nav.html           |  1 +
- _includes/sections/call2action.html |  2 +-
- 3 files changed, 7 insertions(+), 6 deletions(-)
-[master 790f327] Updated db 2021-01-23 08:10
- 2 files changed, 7 insertions(+), 19 deletions(-)
- rewrite api/ajax/cron.log (98%)
+Уже обновлено.
+[master e50db91] Updated db 2021-01-25 08:10
+ 2 files changed, 2 insertions(+), 15 deletions(-)
+ rewrite api/ajax/cron.log (100%)
