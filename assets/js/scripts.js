@@ -92,7 +92,7 @@ PAGE JS
 	
 	//Show Hide dropdown-menu Main navigation 
 	$( document ).ready( function () {
-		$( '.dropdown-menu a.dropdown-toggler' ).on( 'click', function ( e ) {
+		$( '.dropdown a.dropdown-toggler' ).on( 'click', function ( e ) {
 			var $el = $( this );
 			var $parent = $( this ).offsetParent( ".dropdown-menu" );
 			if ( !$( this ).next().hasClass( 'show' ) ) {
