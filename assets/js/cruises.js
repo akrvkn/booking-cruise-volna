@@ -211,7 +211,7 @@ $.fn.dataTableExt.afnFiltering.push(
                 { "data": "tourcabinsfree", "class": "dt-cell-cabins" }
             ],
             "columnDefs": [
-                { responsivePriority: 1, targets: [0,4] },
+                { responsivePriority: 1, targets: [0,2,3] },
                 { responsivePriority: 2, targets: -1 },
                 {
                     "targets": [1, 2, 3, 4, 5, 6],
