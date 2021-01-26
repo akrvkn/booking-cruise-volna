@@ -1,4 +1,8 @@
-Уже обновлено.
-[master e50db91] Updated db 2021-01-25 08:10
- 2 files changed, 2 insertions(+), 15 deletions(-)
- rewrite api/ajax/cron.log (100%)
+Обновление 44d5620..c1ca4a6
+Fast-forward
+ _config.yml                    |  5 ++---
+ _includes/header/nav.html      | 10 +++++-----
+ _includes/sections/banner.html |  6 +++---
+ assets/js/cruises.js           |  2 +-
+ assets/js/scripts.js           |  2 +-
+ 5 files changed, 12 insertions(+), 13 deletions(-)
