@@ -7,10 +7,21 @@
     <meta content="A.Korovkin" name="author">
     <meta name="yandex-verification" content="be31b2853fc77628" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if page.title %}
+    <meta name="description" content="{{site.company}} - {{page.title}}">
+    {% else %}
     <meta name="description" content="{{site.description}}">
+    {% endif %}
+
+
     <meta name="keywords" content="{{site.keywords}}">
     <!-- SITE TITLE -->
+
+    {% if page.title %}
+    <title>{{site.company}} - {{page.title}}</title>
+    {% else %}
     <title>{{site.company}} - {{site.title}}</title>
+    {% endif %}
     <!-- For old IEs -->
     <link rel="shortcut icon" href="/favicon.ico" />
     <!-- For new browsers multisize ico  -->
