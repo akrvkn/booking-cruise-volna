@@ -161,7 +161,7 @@ button:focus {
 .btn {
 	border-width: 2px;
 	cursor: pointer;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	transition: all 0.5s ease-in-out;
 }
 .btn.active:focus, .btn:active:focus {
@@ -461,7 +461,7 @@ button:focus {
 .widget_title3 {
 	font-weight: 700;
 	margin: 0;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 }
 .heading_s1,
 .heading_s2 {
@@ -582,7 +582,7 @@ button:focus {
 }
 .sub_title {
     color: #0e93d8;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     margin-bottom: 5px;
     display: block;
 }
@@ -1440,7 +1440,7 @@ select option {
 	text-transform: uppercase;
 }
 .main_menu_capitalize .navbar-expand-lg .navbar-nav > li > .nav-link {
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 }
 .main_menu_weight_100 .navbar-expand-lg .navbar-nav > li > .nav-link {
 	font-weight: 100;
@@ -1479,7 +1479,7 @@ select option {
 	padding: 8px 25px 8px 10px;
 	color: #bdbdbd;
 	font-size: 14px;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 }
 .navbar-expand-lg .navbar-nav .dropdown-header {
     color: #fff;
@@ -3330,7 +3330,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 .icon_box_content h4,
 .icon_box_content h5,
 .icon_box_content h6 {
-	text-transform:capitalize;
+	/*text-transform:capitalize;*/
 }
 .icon_box_style_15 .box_icon img {
 	max-width: 60px;
@@ -3550,7 +3550,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
 	padding: 5px 25px;
     display: block;
 	font-size: 16px;
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 }
 .portfolio_filter li a.current,
 .portfolio_filter li a:hover {
@@ -4295,7 +4295,7 @@ header.light_skin.nav-fixed .social_icons li a:hover {
     color: #333;
     display: inline-block;
     width: 100%;
-	text-transform:capitalize;
+	/*text-transform:capitalize;*/
 	font-weight: 600;
 }
 .user_img img {
@@ -5952,7 +5952,7 @@ select[multiple] option {
 .page-title h1 {
     font-size: 36px;
 	margin: 0;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 	font-weight: bold;
 }
 .breadcrumb {
@@ -5963,7 +5963,7 @@ select[multiple] option {
 	padding-bottom: 0;
 }
 .breadcrumb li a, .breadcrumb li {
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 }
 .header_wrap.fixed-top + .breadcrumb_section {
 	padding-top: 160px;
@@ -6001,7 +6001,7 @@ select[multiple] option {
 	padding: 20px;
 }
 .pr_title * {
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
 	position: relative;
 }
 .price_tage h2 {
@@ -6444,7 +6444,7 @@ select[multiple] option {
 .post_navigation span {
     display: block;
 	font-weight: bold;
-	text-transform: capitalize;
+	/*text-transform: capitalize;*/
 }
 .post_navigation .nav_meta {
 	font-size: 14px;
