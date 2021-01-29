@@ -1,3 +1,7 @@
-Уже обновлено.
-[master 935d18e] Updated db 2021-01-28 08:10
- 2 files changed, 1 insertion(+), 4 deletions(-)
+Обновление 8eb7899..22bd610
+Fast-forward
+ _includes/forms/booking-form.html |   2 +-
+ _pages/baikal-8.md                | 162 ++++++++++++++++++++++++++++++++++++++
+ _pages/baikal.md                  |   4 +-
+ 3 files changed, 166 insertions(+), 2 deletions(-)
+ create mode 100644 _pages/baikal-8.md
