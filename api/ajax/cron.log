@@ -1,3 +1,5 @@
-Уже обновлено.
-[master 2e3189d] Updated db 2021-02-01 08:10
- 2 files changed, 1 insertion(+), 3 deletions(-)
+Обновление c73d753..912913f
+Fast-forward
+ _pages/bonus.md    | 22 +++++++++++-----------
+ _pages/routes.html | 28 ++++++++++++++--------------
+ 2 files changed, 25 insertions(+), 25 deletions(-)
