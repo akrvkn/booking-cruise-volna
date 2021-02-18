@@ -9,7 +9,7 @@ layout: none
 <channel>
     <!-- Информация о сайте-источнике -->
     <title>{{ site.company }}</title>
-    <link>{{ site.url }}</link>
+    <link>{{ site.link }}</link>
     <description>{{ site.description }}</description>
     <language>ru</language>
     {% for post in site.posts %}
@@ -17,7 +17,7 @@ layout: none
     <item turbo="true">
         <title>{{ post.title }}</title>
         <turbo:extendedHtml>true</turbo:extendedHtml>
-        <link>{{ post.url | prepend: site.url }}</link>
+        <link>{{ post.url | prepend: site.link }}</link>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
         <yandex:related></yandex:related>
 
