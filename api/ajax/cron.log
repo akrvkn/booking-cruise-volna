@@ -1,9 +1,1 @@
-Обновление 8dace46..b0e5ee8
-Fast-forward
- _config.yml                 |  6 +++---
- _includes/header/nav.html   | 14 +++++++-------
- _posts/2021-02-05-skidka.md |  2 +-
- rss.xml                     |  4 ++--
- 4 files changed, 13 insertions(+), 13 deletions(-)
-[master e188eb1] Updated db 2021-02-19 08:10
- 2 files changed, 7 insertions(+), 8 deletions(-)
+Уже обновлено.
