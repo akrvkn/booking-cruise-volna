@@ -1,3 +1,11 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^cruise-volna\.ru$ [NC]
+RewriteRule ^(.*)$ https://www.cruise-volna.ru/$1 [L,R=301]
+
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /$1.html [L]
