@@ -1,3 +1,5 @@
-Уже обновлено.
-[master 6988ca4] Updated db 2021-02-21 08:11
- 2 files changed, 1 insertion(+), 3 deletions(-)
+Обновление 6c47cdf..3629403
+Fast-forward
+ .htaccess | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
+ create mode 100644 .htaccess
