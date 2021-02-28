@@ -5,3 +5,4 @@ _site/
 .idea/
 Gemfile.lock
 .DS_Store
+api/pass_file
