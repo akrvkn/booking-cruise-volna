@@ -13,53 +13,13 @@ $counter = 0;
 $table = [];
 $ships = [];
 $total = 0;
-
-$firstPage = json_decode(file_get_contents($cruises_base), true);
-$total = $firstPage['pagination']['records']['total'];
-$page = $firstPage['pagination']['pages']['next']['number'];
-$pages = $firstPage['pagination']['pages']['total'];
-
-foreach( $firstPage['data'] as $pageData) {
-        $table[$counter]['company'] = 'iff';
-        $table[$counter]['shipid'] = $pageData['ship']['id'];
-        $table[$counter]['shipname'] = $pageData['ship']['name'];
-        $table[$counter]['tourid'] = $pageData['id'];
-        $table[$counter]['tourstart'] = $pageData['dateStart'];
-        $table[$counter]['tourfinish'] = $pageData['dateEnd'];
-        $table[$counter]['tourroute'] = $pageData['route'];
-        $table[$counter]['tourdays'] = $pageData['days'];
-        $table[$counter]['tourminprice'] = $pageData['min_price'];
-        $table[$counter]['tourcabinsfree'] = $pageData['freeCabins'];
-        
-        $counter++;
-}
-
-for($i=0; $i < $pages; $i++){
-    //echo $page."\n";
-    if($page < $pages){
-        $nextPage = json_decode(@file_get_contents($cruises_base.'&page='.$page), true);
-        $page = $nextPage['pagination']['pages']['next']['number'];
-
-        if($nextPage){
-            foreach( $nextPage['data'] as $pageData) {
-                    $table[$counter]['company'] = 'iff';
-                    $table[$counter]['shipid'] = $pageData['ship']['id'];
-                    $table[$counter]['shipname'] = $pageData['ship']['name'];
-                    $table[$counter]['tourid'] = $pageData['id'];
-                    $table[$counter]['tourstart'] = $pageData['dateStart'];
-                    $table[$counter]['tourfinish'] = $pageData['dateEnd'];
-                    $table[$counter]['tourroute'] = $pageData['route'];
-                    $table[$counter]['tourdays'] = $pageData['days'];
-                    $table[$counter]['tourminprice'] = $pageData['min_price'];
-                    $table[$counter]['tourcabinsfree'] = $pageData['freeCabins'];
-                    $counter++;
-            }
-        }
-    }
-}
+$vdh_names = [];
 
 $vodohodApi = json_decode(file_get_contents('https://api.vodohod.com/json/v2/cruises.php?pauth=v2-ba9fab12d2c4b8d005645d04492a7af7'), true);
 foreach( $vodohodApi as $vdh_ship_cruise ){
+    if(!in_array($vdh_ship_cruise['motorshipName'], $vdh_names)){
+        $vdh_names[] = $vdh_ship_cruise['motorshipName'];
+    }
     $table[$counter]['company'] = 'vdh';
     $table[$counter]['shipid'] = $vdh_ship_cruise['motorshipId'];
     $table[$counter]['shipname'] = $vdh_ship_cruise['motorshipName'];
@@ -72,6 +32,54 @@ foreach( $vodohodApi as $vdh_ship_cruise ){
     $table[$counter]['tourcabinsfree'] = $vdh_ship_cruise['availabilityCount'];
 
 	$counter++;
+}
+
+$firstPage = json_decode(file_get_contents($cruises_base), true);
+$total = $firstPage['pagination']['records']['total'];
+$page = $firstPage['pagination']['pages']['next']['number'];
+$pages = $firstPage['pagination']['pages']['total'];
+
+foreach( $firstPage['data'] as $pageData) {
+    if(!in_array($pageData['ship']['name'], $vdh_names)){    
+        $table[$counter]['company'] = 'iff';
+        $table[$counter]['shipid'] = $pageData['ship']['id'];
+        $table[$counter]['shipname'] = $pageData['ship']['name'];
+        $table[$counter]['tourid'] = $pageData['id'];
+        $table[$counter]['tourstart'] = $pageData['dateStart'];
+        $table[$counter]['tourfinish'] = $pageData['dateEnd'];
+        $table[$counter]['tourroute'] = $pageData['route'];
+        $table[$counter]['tourdays'] = $pageData['days'];
+        $table[$counter]['tourminprice'] = $pageData['min_price'];
+        $table[$counter]['tourcabinsfree'] = $pageData['freeCabins'];
+        
+        $counter++;
+    }
+}
+
+for($i=0; $i < $pages; $i++){
+    //echo $page."\n";
+    if($page < $pages){
+        $nextPage = json_decode(@file_get_contents($cruises_base.'&page='.$page), true);
+        $page = $nextPage['pagination']['pages']['next']['number'];
+
+        if($nextPage){
+            foreach( $nextPage['data'] as $pageData) {
+                if(!in_array($pageData['ship']['name'], $vdh_names)){
+                    $table[$counter]['company'] = 'iff';
+                    $table[$counter]['shipid'] = $pageData['ship']['id'];
+                    $table[$counter]['shipname'] = $pageData['ship']['name'];
+                    $table[$counter]['tourid'] = $pageData['id'];
+                    $table[$counter]['tourstart'] = $pageData['dateStart'];
+                    $table[$counter]['tourfinish'] = $pageData['dateEnd'];
+                    $table[$counter]['tourroute'] = $pageData['route'];
+                    $table[$counter]['tourdays'] = $pageData['days'];
+                    $table[$counter]['tourminprice'] = $pageData['min_price'];
+                    $table[$counter]['tourcabinsfree'] = $pageData['freeCabins'];
+                    $counter++;
+                }
+            }
+        }
+    }
 }
 
 usort($table, function($a, $b){
