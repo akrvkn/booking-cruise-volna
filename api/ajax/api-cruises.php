@@ -11,6 +11,7 @@ $page = 1;
 $pages = 0;
 $counter = 0;
 $table = [];
+$ships = [];
 $total = 0;
 
 $firstPage = json_decode(file_get_contents($cruises_base), true);
@@ -29,6 +30,7 @@ foreach( $firstPage['data'] as $pageData) {
         $table[$counter]['tourdays'] = $pageData['days'];
         $table[$counter]['tourminprice'] = $pageData['min_price'];
         $table[$counter]['tourcabinsfree'] = $pageData['freeCabins'];
+        
         $counter++;
 }
 
@@ -75,6 +77,31 @@ foreach( $vodohodApi as $vdh_ship_cruise ){
 usort($table, function($a, $b){
     return $a['tourstart'] <=> $b['tourstart'];
 });
+
+$vdh_ships = [];
+$iff_ships = [];
+
+foreach( $table as $cruise ){
+    if($cruise['company'] == 'vdh' && !in_array($cruise['shipid'], $vdh_ships)){
+        $vdh_ships[] = $cruise['shipid'];
+        $ship = [];
+        $ship['company'] = $cruise['company'];
+        $ship['shipid'] = $cruise['shipid'];
+        $ship['shipname'] = $cruise['shipname'];
+        $ships[] = $ship;
+    }
+    if($cruise['company'] == 'iff' && !in_array($cruise['shipid'], $iff_ships)){
+        $iff_ships[] = $cruise['shipid'];
+        $ship = [];
+        $ship['company'] = $cruise['company'];
+        $ship['shipid'] = $cruise['shipid'];
+        $ship['shipname'] = $cruise['shipname'];
+        $ships[] = $ship;
+    }
+    
+}
+
+file_put_contents('ships.json', json_encode($ships));
 
 file_put_contents('cruises.json', json_encode($table));
 
