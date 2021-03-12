@@ -3,3 +3,7 @@ Fast-forward
  _posts/2021-03-12-actsiya.md | 6 ++++++
  1 file changed, 6 insertions(+)
  create mode 100644 _posts/2021-03-12-actsiya.md
+[master b4afd6c] Updated db 2021-03-12 08:11
+ 3 files changed, 7 insertions(+), 6 deletions(-)
+ rewrite api/ajax/cruises.json (61%)
+ rewrite api/ajax/ships.json (82%)
