@@ -49,7 +49,7 @@ foreach( $firstPage['data'] as $pageData) {
         $table[$counter]['tourfinish'] = $pageData['dateEnd'];
         $table[$counter]['tourroute'] = $pageData['route'];
         $table[$counter]['tourdays'] = $pageData['days'];
-        $table[$counter]['tourminprice'] = $pageData['min_price'];
+        $table[$counter]['tourminprice'] = (string)$pageData['min_price'];
         $table[$counter]['tourcabinsfree'] = $pageData['freeCabins'];
         
         $counter++;
@@ -73,7 +73,7 @@ for($i=0; $i < $pages; $i++){
                     $table[$counter]['tourfinish'] = $pageData['dateEnd'];
                     $table[$counter]['tourroute'] = $pageData['route'];
                     $table[$counter]['tourdays'] = $pageData['days'];
-                    $table[$counter]['tourminprice'] = $pageData['min_price'];
+                    $table[$counter]['tourminprice'] = (string)$pageData['min_price'];
                     $table[$counter]['tourcabinsfree'] = $pageData['freeCabins'];
                     $counter++;
                 }
