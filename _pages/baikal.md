@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Круизы по Байкалу
-permalink: /baikal
+permalink: /baikal/
 ---
 
 ![Теплоход "Александр Великий"](/assets/images/baikal/alexander.jpg)

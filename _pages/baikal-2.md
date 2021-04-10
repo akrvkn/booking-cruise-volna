@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Байкальские каникулы
-permalink: /baikal2
+permalink: /baikal2/
 ---
 
 ![Теплоход "Александр Великий"](/assets/images/baikal/alexander.jpg)

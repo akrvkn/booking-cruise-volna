@@ -5,7 +5,7 @@ Allow: /*.png$
 Allow: /*.jpg$
 Disallow: /api/
 
-Host: https://www.cruise-volna.ru
+Host: https://www.cruise-volna.com
 
 User-agent: Googlebot
 Allow: /*.js
@@ -14,4 +14,4 @@ Allow: /*.png$
 Allow: /*.jpg$
 Disallow: /api/
 
-Sitemap: https://www.cruise-volna.ru/sitemap.xml
+Sitemap: https://www.cruise-volna.com/sitemap.xml

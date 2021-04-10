@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Пользовательское соглашение
-permalink: /eula
+permalink: /eula/
 ---
 
 

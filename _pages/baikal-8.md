@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Вокруг Байкала за 7 дней
-permalink: /baikal8
+permalink: /baikal8/
 ---
 
 ![Теплоход "Империя"](/assets/images/baikal/imperia.jpg)

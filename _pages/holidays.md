@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Проведи свой профессиональный праздник в круизе
-permalink: /holidays
+permalink: /holidays/
 ---
 
 

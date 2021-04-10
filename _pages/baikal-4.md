@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Вокруг Байкала за 8 дней
-permalink: /baikal4
+permalink: /baikal4/
 ---
 
 ![Теплоход "Александр Великий"](/assets/images/baikal/alexander.jpg)

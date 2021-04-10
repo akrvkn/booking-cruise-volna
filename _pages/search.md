@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Поиск
-permalink: /search
+permalink: /search/
 ---
 
 {% include plugins/yandex-search-results.html %}

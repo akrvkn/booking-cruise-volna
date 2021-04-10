@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Скидки
-permalink: /bonus
+permalink: /bonus/
 ---
 
 ## Основные и сезонные скидки в речную навигацию 2021 г.

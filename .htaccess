@@ -1,4 +1,7 @@
 RewriteEngine On
+RewriteBase /
+ErrorDocument 404 /404
+
 RewriteCond %{HTTP_HOST} ^cruise-volna\.ru$ [NC]
 RewriteRule ^(.*)$ https://www.cruise-volna.ru/$1 [L,R=301]
 
@@ -8,4 +11,8 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.*)$ /$1.html [L]
+
+
+

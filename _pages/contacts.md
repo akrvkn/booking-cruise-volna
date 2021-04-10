@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Контакты
-permalink: /contacts
+permalink: /contacts/
 ---
 
 метро Площадь Ильича, Римская   

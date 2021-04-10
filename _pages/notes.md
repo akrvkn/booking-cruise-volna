@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Памятка туристу
-permalink: /notes
+permalink: /notes/
 ---
 
 

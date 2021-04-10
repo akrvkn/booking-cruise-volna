@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Проверить статус
-permalink: /status
+permalink: /status/
 ---
 
 {% include sections/contact.html %}

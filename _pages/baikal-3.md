@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Байкальская Одиссея
-permalink: /baikal3
+permalink: /baikal3/
 ---
 
 ![Теплоход "Александр Великий"](/assets/images/baikal/alexander.jpg)

@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Очарование Севера
-permalink: /baikal5
+permalink: /baikal5/
 ---
 
 ![Теплоход "Александр Великий"](/assets/images/baikal/alexander.jpg)

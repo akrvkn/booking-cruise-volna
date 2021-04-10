@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Акции
-permalink: /spec
+permalink: /spec/
 ---
 
 

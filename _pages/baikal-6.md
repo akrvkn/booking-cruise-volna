@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Байкальская Одиссея
-permalink: /baikal6
+permalink: /baikal6/
 ---
 
 ![Теплоход "Империя"](/assets/images/baikal/imperia.jpg)

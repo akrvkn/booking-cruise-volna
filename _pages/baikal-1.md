@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Пробуждение Байкала
-permalink: /baikal1
+permalink: /baikal1/
 ---
 
 ![Теплоход "Александр Великий"](/assets/images/baikal/alexander.jpg)

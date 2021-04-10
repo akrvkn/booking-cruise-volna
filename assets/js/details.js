@@ -21,7 +21,6 @@ function compare(a,b) {
 
 moment.locale('ru');
 
-
 (function($){
     $(document).ready(function() {
         var ru_RU = {
@@ -58,6 +57,7 @@ moment.locale('ru');
                 var shipdata = ships[0];
                 var cab = cabs[0];
                 $('.shipname').html('<hr><h2>т/х "' + shipdata['name'] + '"</h2>');
+                $("title").text('Круиз т.х. ' + shipdata['name']);
                 $("input[name='ship']").val(shipdata['name']);
                 $('.shipimg').html('<img src="' + shipdata['files']['photo']['path'] + '" width="350" />');
                 $('.deckplan').html('<a href="' + shipdata['files']['scheme']['path'] + '" data-lightbox="deckplan"><img src="' + shipdata['files']['scheme']['path'] + '" width="350" /></a>');
@@ -101,6 +101,7 @@ moment.locale('ru');
                     //console.log(data);
                     $('.cruise-meta').append('<li>' + data['route'] + '</li>').append('<li>Дата круиза: ' + moment(data['dateStart'], 'YYYY-MM-DDTHH:mm:ss+03:00').format('YYYY-MM-DD HH:mm') + ' - ' + moment(data['dateEnd'], 'YYYY-MM-DDTHH:mm:ss+03:00').format('YYYY-MM-DD HH:mm') + ' ( ' + data['days'] + ' дн.)' + ' </li>');
                     $("input[name='tour']").val(data['route']);
+                    $("meta[name='description']").attr('content', 'Круиз: ' +  data['route']);
                     $("input[name='date']").val(data['dateStart'] );
                     const dataSet = [];
                     let ex = '';
@@ -139,6 +140,7 @@ moment.locale('ru');
             $.getJSON(ships_url)
                 .done(function (data) {
                     $('.shipname').html('<hr><h2>т/х "' + data[shipid]['name'] + '"</h2>');
+                    $("title").text('Круиз ' + tourid + ' т.х. ' + data[shipid]['name']);
                     $("input[name='ship']").val(data[shipid]['name']);
                     $('.shipimg').html('<img src="/assets/img/vdh/'+ data[shipid]['code'] + '.jpg" width="550" />');
                     $('.deckplan').html('<a href="' + data[shipid]['decks'] + '" data-lightbox="deckplan"><img src="' + data[shipid]['decks'] + '" width="350" /></a>');
@@ -149,6 +151,7 @@ moment.locale('ru');
                 .done(function (tours) {
                     $('.cruise-meta').append('<li>' + tours['name'] + '</li>').append('<li>Дата круиза: ' + moment(tours['dateStart']).format('DD.MM.YYYY') + ' - ' + moment(tours['dateStop']).format('DD.MM.YYYY') + ' ( ' + tours['days'] + ' дн.)' + ' </li>');
                     $("input[name='tour']").val(tours['name']);
+                    $("meta[name='description']").attr('content', 'Круиз: ' +  tours['name']);
                     $("input[name='date']").val(tours['dateStart']);
                     $.each(tours.tariffs[0].prices, function (id, row) {
                         var available = row.hasOwnProperty('available') === true ? row['available'] : '0';
