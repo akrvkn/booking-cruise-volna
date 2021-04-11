@@ -1,3 +1,11 @@
-Уже обновлено.
-[master 7ab8ef77] Updated db 2021-04-10 08:11
- 3 files changed, 2 insertions(+), 4 deletions(-)
+Обновление a1940717..deeb14d1
+Fast-forward
+ _includes/footer/scripts.html |  4 +++-
+ _includes/header/nav.html     | 36 ++++++++++++++++++------------------
+ api/ajax/schemes.json         |  1 +
+ api/ajax/shipsimages.json     |  1 +
+ assets/js/ship-details.js     | 11 ++++++-----
+ assets/js/ships-list.js       |  8 ++++----
+ 6 files changed, 33 insertions(+), 28 deletions(-)
+ create mode 100644 api/ajax/schemes.json
+ create mode 100644 api/ajax/shipsimages.json
