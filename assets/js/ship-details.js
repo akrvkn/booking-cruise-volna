@@ -49,11 +49,10 @@ moment.locale('ru');
         function renderDetails() {
             var shipid = parseUrlQuery('ship');
             //var tourid = parseUrlQuery('tour');
-            var ships_url = 'api/db/data/ships.json';
-            var ships_img = 'api/db/data/shipsimages.json';
-            var deck_img = 'api/db/data/schemes.json';
-            var desc_url = 'api/db/data/' + shipid + '/description.json';
-            var cabins_url = 'api/db/data/' + shipid + '/cabins.json';
+            var ships_url = '/api/ajax/ships.json';
+            var ships_img = '/api/ajax/shipsimages.json';
+            var deck_img = '/api/ajax/schemes.json';
+            var desc_url = '/api/data/' + shipid + '/cabins.json';
             //var tours_url = 'api/db/data/' + shipid + '/tours.json';
             //var route_url = 'api/db/data/' + shipid + '/' + tourid + '.json';
 
@@ -61,6 +60,7 @@ moment.locale('ru');
             $.getJSON(ships_url)
                 .done(function (data) {
                     $('.shipname').html('<hr><h2>т/х "' + data[shipid] + '"</h2>');
+                    $('title').text('т/х "' + data[shipid] + '"');
                     $("input[name='ship']").val(data[shipid]);
                 });
             $.getJSON(ships_img)
@@ -136,6 +136,7 @@ moment.locale('ru');
                     var titleimage = '<img src="https://' + data.answer.shiptitleimage + '" width="483" />';
                     $('.shipimg').html(titleimage);
                     $('.shipname').html('<hr><h2>т/х "' + data.answer.shipname + '"</h2>');
+                    $('title').text('т/х "' + data.answer.shipname + '"');
                     var desc = data.answer.shipdesc.replace(/<a.*?>.*<\/a>/g, '');
                     desc = desc.replace(/<.*?>/g, '');
                     $('.deckplan').html('<a href="https://booking.mosturflot.ru/rivercruises/ships/' + shipid + '/deckplan" data-lightbox="deckplan"><img src="https://booking.mosturflot.ru/rivercruises/ships/' + shipid + '/deckplan" width="350" /></a>');

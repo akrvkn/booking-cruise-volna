@@ -1,7 +1,7 @@
-var ships_url = 'api/ajax/ships.json';
-var ships_img = 'api/ajax/shipsimages.json';
-var mtf_url = 'api/ajax/mtfships.json';
-var mtf_img = 'api/ajax/mtfimages.json';
+var ships_url = '/api/ajax/ships.json';
+var ships_img = '/api/ajax/shipsimages.json';
+var mtf_url = '/api/ajax/mtfships.json';
+var mtf_img = '/api/ajax/mtfimages.json';
 
 var ul = $('#ships-list');
 
