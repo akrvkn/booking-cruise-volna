@@ -1,15 +1,1 @@
-Обновление a1940717..deeb14d1
-Fast-forward
- _includes/footer/scripts.html |  4 +++-
- _includes/header/nav.html     | 36 ++++++++++++++++++------------------
- api/ajax/schemes.json         |  1 +
- api/ajax/shipsimages.json     |  1 +
- assets/js/ship-details.js     | 11 ++++++-----
- assets/js/ships-list.js       |  8 ++++----
- 6 files changed, 33 insertions(+), 28 deletions(-)
- create mode 100644 api/ajax/schemes.json
- create mode 100644 api/ajax/shipsimages.json
-[master 6eb6018b] Updated db 2021-04-11 08:10
- 3 files changed, 13 insertions(+), 5 deletions(-)
- rewrite api/ajax/cron.log (100%)
- rewrite api/ajax/ships.json (97%)
+Уже обновлено.
