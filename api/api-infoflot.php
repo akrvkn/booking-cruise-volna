@@ -50,7 +50,7 @@ foreach($nums as $id){
   $data['name'] = $single['name'];
   $data['company'] = 'Инфофлот';
   $data['category'] = count($single['decks']).'-палубный';
-  $data['description'] = strip_tags($single['description']);
+  $data['description'] = $single['description'] == null ? strip_tags($single['descriptionBig']) : strip_tags($single['description']);
   $data['cabins'] = [];
   if(!is_dir($iff_dir.'/'.$single['id'])){
 		mkdir($iff_dir.'/'.$single['id']);
@@ -61,7 +61,7 @@ foreach($nums as $id){
   foreach($single['cabins'] as $cabin){   
     $cabin_data['id'] = $cabin['typeId'];
     $cabin_data['category'] = $cabin['typeName'];
-    $cabin_data['description'] = $cabin['typeFriendlyName'];
+    $cabin_data['description'] = $cabin['typeFriendlyName'] == null ? strip_tags($cabin['typeDescription']) : $cabin['typeFriendlyName'];
     //$cabin_data['photo'] = $cabin['photos'][0]['filename'] == null ? '' : $cabin['photos'][0]['filename'];
     $data['cabins'][$cabin['typeId']] = $cabin_data;
     if(!is_file($iff_dir.'/'.$single['id'].'/cabins/'.$cabin['typeId'].'.jpg') && isset($cabin['photos'][0]['filename'])){
