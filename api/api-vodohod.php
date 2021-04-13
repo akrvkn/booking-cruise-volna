@@ -59,6 +59,6 @@ foreach( $vdh_ships as $board){
   $data['cabins'] = $cabin_data;
   $ships_data[] = $data;
 }
-file_put_contents('ships-vodohod.json', json_encode($ships_data));
+file_put_contents('ships-vodohod.json', json_encode($ships_data, JSON_UNESCAPED_UNICODE));
 
 ?>

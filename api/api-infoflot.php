@@ -72,6 +72,6 @@ foreach($nums as $id){
   $ships_data[] = $data;
 }
 
-file_put_contents('ships-infoflot.json', json_encode($ships_data));
+file_put_contents('ships-infoflot.json', json_encode($ships_data, JSON_UNESCAPED_UNICODE));
 
 ?>

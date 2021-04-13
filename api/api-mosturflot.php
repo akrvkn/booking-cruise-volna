@@ -72,6 +72,6 @@ foreach( $mtf_ships['data'] as $board){
   $data['cabins'] = $cabins;
   $ships_data[] = $data;
 }
-file_put_contents('ships-mosturflot.json', json_encode($ships_data));
+file_put_contents('ships-mosturflot.json', json_encode($ships_data, JSON_UNESCAPED_UNICODE));
 
 ?>
