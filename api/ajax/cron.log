@@ -1,4 +1,798 @@
-Уже обновлено.
-[master f65e9126] Updated db 2021-04-12 08:10
- 2 files changed, 2 insertions(+), 16 deletions(-)
- rewrite api/ajax/cron.log (100%)
+Обновление 33f0a6fa..23e2d72f
+Fast-forward
+ api/api-infoflot.php                   |  75 +++++++++++++++++++++++-
+ api/api-mosturflot.php                 |  77 +++++++++++++++++++++++++
+ api/api-vodohod-bak.php                | 102 +++++++++++++++++++++++++++++++++
+ api/api-vodohod-img.php                | 102 +++++++++++++++++++++++++++++++++
+ api/api-vodohod.php                    |  64 +++++++++++++++++++++
+ api/data/infoflot/1.jpg                | Bin 0 -> 91173 bytes
+ api/data/infoflot/1/1.jpg              | Bin 0 -> 91173 bytes
+ api/data/infoflot/1/cabins/10.jpg      | Bin 0 -> 188247 bytes
+ api/data/infoflot/1/cabins/14.jpg      | Bin 0 -> 246546 bytes
+ api/data/infoflot/1/cabins/146.jpg     | Bin 0 -> 239963 bytes
+ api/data/infoflot/1/cabins/148.jpg     | Bin 0 -> 239963 bytes
+ api/data/infoflot/1/cabins/149.jpg     | Bin 0 -> 211848 bytes
+ api/data/infoflot/1/cabins/3348.jpg    | Bin 0 -> 246702 bytes
+ api/data/infoflot/1/cabins/4007.jpg    | Bin 0 -> 121762 bytes
+ api/data/infoflot/1/cabins/6.jpg       | Bin 0 -> 121762 bytes
+ api/data/infoflot/1/cabins/7.jpg       | Bin 0 -> 240070 bytes
+ api/data/infoflot/1/cabins/867.jpg     | Bin 0 -> 246702 bytes
+ api/data/infoflot/1/cabins/9.jpg       | Bin 0 -> 252924 bytes
+ api/data/infoflot/1/cabins/92.jpg      | Bin 0 -> 212035 bytes
+ api/data/infoflot/260.jpg              | Bin 0 -> 97255 bytes
+ api/data/infoflot/260/260.jpg          | Bin 0 -> 97255 bytes
+ api/data/infoflot/3.jpg                | Bin 0 -> 156217 bytes
+ api/data/infoflot/3/3.jpg              | Bin 0 -> 156217 bytes
+ api/data/infoflot/3/cabins/31.jpg      | Bin 0 -> 235498 bytes
+ api/data/infoflot/3/cabins/32.jpg      | Bin 0 -> 168731 bytes
+ api/data/infoflot/38.jpg               | Bin 0 -> 2090202 bytes
+ api/data/infoflot/38/38.jpg            | Bin 0 -> 2090202 bytes
+ api/data/infoflot/38/cabins/304.jpg    | Bin 0 -> 220875 bytes
+ api/data/infoflot/38/cabins/305.jpg    | Bin 0 -> 224952 bytes
+ api/data/infoflot/38/cabins/306.jpg    | Bin 0 -> 256441 bytes
+ api/data/infoflot/38/cabins/307.jpg    | Bin 0 -> 186449 bytes
+ api/data/infoflot/38/cabins/308.jpg    | Bin 0 -> 182787 bytes
+ api/data/infoflot/38/cabins/309.jpg    | Bin 0 -> 265236 bytes
+ api/data/infoflot/38/cabins/310.jpg    | Bin 0 -> 242558 bytes
+ api/data/infoflot/38/cabins/3252.jpg   | Bin 0 -> 220948 bytes
+ api/data/infoflot/4.jpg                | Bin 0 -> 1794306 bytes
+ api/data/infoflot/4/4.jpg              | Bin 0 -> 1794306 bytes
+ api/data/infoflot/4/cabins/3253.jpg    | Bin 0 -> 174048 bytes
+ api/data/infoflot/4/cabins/41.jpg      | Bin 0 -> 232375 bytes
+ api/data/infoflot/4/cabins/42.jpg      | Bin 0 -> 220263 bytes
+ api/data/infoflot/4/cabins/43.jpg      | Bin 0 -> 254783 bytes
+ api/data/infoflot/4/cabins/78.jpg      | Bin 0 -> 160461 bytes
+ api/data/infoflot/4/cabins/79.jpg      | Bin 0 -> 189420 bytes
+ api/data/infoflot/4/cabins/81.jpg      | Bin 0 -> 235527 bytes
+ api/data/infoflot/4/cabins/82.jpg      | Bin 0 -> 230638 bytes
+ api/data/infoflot/4/cabins/843.jpg     | Bin 0 -> 243053 bytes
+ api/data/infoflot/478.jpg              | Bin 0 -> 664746 bytes
+ api/data/infoflot/478/478.jpg          | Bin 0 -> 664746 bytes
+ api/data/infoflot/478/cabins/4013.jpg  | Bin 0 -> 202118 bytes
+ api/data/infoflot/478/cabins/4015.jpg  | Bin 0 -> 202118 bytes
+ api/data/infoflot/478/cabins/4016.jpg  | Bin 0 -> 262820 bytes
+ api/data/infoflot/478/cabins/4019.jpg  | Bin 0 -> 262820 bytes
+ api/data/infoflot/478/cabins/4020.jpg  | Bin 0 -> 208220 bytes
+ api/data/infoflot/478/cabins/4021.jpg  | Bin 0 -> 357166 bytes
+ api/data/infoflot/478/cabins/4022.jpg  | Bin 0 -> 365826 bytes
+ api/data/infoflot/478/cabins/5193.jpg  | Bin 0 -> 234622 bytes
+ api/data/infoflot/478/cabins/5808.jpg  | Bin 0 -> 204423 bytes
+ api/data/infoflot/487.jpg              | Bin 0 -> 42481 bytes
+ api/data/infoflot/487/487.jpg          | Bin 0 -> 42481 bytes
+ api/data/infoflot/498.jpg              | Bin 0 -> 341776 bytes
+ api/data/infoflot/498/498.jpg          | Bin 0 -> 341776 bytes
+ api/data/infoflot/498/cabins/4853.jpg  | Bin 0 -> 204362 bytes
+ api/data/infoflot/498/cabins/4854.jpg  | Bin 0 -> 183245 bytes
+ api/data/infoflot/498/cabins/4857.jpg  | Bin 0 -> 196480 bytes
+ api/data/infoflot/498/cabins/4859.jpg  | Bin 0 -> 252632 bytes
+ api/data/infoflot/498/cabins/4860.jpg  | Bin 0 -> 244487 bytes
+ api/data/infoflot/498/cabins/4861.jpg  | Bin 0 -> 183245 bytes
+ api/data/infoflot/498/cabins/5466.jpg  | Bin 0 -> 229925 bytes
+ api/data/infoflot/498/cabins/5467.jpg  | Bin 0 -> 73999 bytes
+ api/data/infoflot/498/cabins/5468.jpg  | Bin 0 -> 227437 bytes
+ api/data/infoflot/498/cabins/5469.jpg  | Bin 0 -> 212128 bytes
+ api/data/infoflot/498/cabins/5807.jpg  | Bin 0 -> 188192 bytes
+ api/data/infoflot/571.jpg              | Bin 0 -> 409519 bytes
+ api/data/infoflot/571/571.jpg          | Bin 0 -> 409519 bytes
+ api/data/infoflot/571/cabins/5601.jpg  | Bin 0 -> 264452 bytes
+ api/data/infoflot/571/cabins/5602.jpg  | Bin 0 -> 211219 bytes
+ api/data/infoflot/571/cabins/5603.jpg  | Bin 0 -> 240090 bytes
+ api/data/infoflot/571/cabins/5604.jpg  | Bin 0 -> 260568 bytes
+ api/data/infoflot/571/cabins/5605.jpg  | Bin 0 -> 255535 bytes
+ api/data/infoflot/571/cabins/5606.jpg  | Bin 0 -> 234650 bytes
+ api/data/infoflot/571/cabins/5607.jpg  | Bin 0 -> 244052 bytes
+ api/data/infoflot/571/cabins/5608.jpg  | Bin 0 -> 257045 bytes
+ api/data/infoflot/571/cabins/5609.jpg  | Bin 0 -> 253106 bytes
+ api/data/infoflot/64.jpg               | Bin 0 -> 52415 bytes
+ api/data/infoflot/64/64.jpg            | Bin 0 -> 52415 bytes
+ api/data/infoflot/7.jpg                | Bin 0 -> 1152682 bytes
+ api/data/infoflot/7/7.jpg              | Bin 0 -> 1152682 bytes
+ api/data/infoflot/7/cabins/408.jpg     | Bin 0 -> 202448 bytes
+ api/data/infoflot/7/cabins/65.jpg      | Bin 0 -> 314016 bytes
+ api/data/infoflot/7/cabins/66.jpg      | Bin 0 -> 250816 bytes
+ api/data/infoflot/7/cabins/68.jpg      | Bin 0 -> 210030 bytes
+ api/data/infoflot/7/cabins/70.jpg      | Bin 0 -> 178473 bytes
+ api/data/infoflot/7/cabins/74.jpg      | Bin 0 -> 222649 bytes
+ api/data/infoflot/7/cabins/848.jpg     | Bin 0 -> 258042 bytes
+ api/data/infoflot/7/cabins/849.jpg     | Bin 0 -> 287393 bytes
+ api/data/infoflot/7/cabins/850.jpg     | Bin 0 -> 206627 bytes
+ api/data/infoflot/7/cabins/851.jpg     | Bin 0 -> 169332 bytes
+ api/data/infoflot/83.jpg               | Bin 0 -> 229128 bytes
+ api/data/infoflot/83/83.jpg            | Bin 0 -> 229128 bytes
+ api/data/infoflot/83/cabins/3342.jpg   | Bin 0 -> 204730 bytes
+ api/data/infoflot/83/cabins/567.jpg    | Bin 0 -> 186430 bytes
+ api/data/infoflot/83/cabins/568.jpg    | Bin 0 -> 227709 bytes
+ api/data/infoflot/83/cabins/569.jpg    | Bin 0 -> 226535 bytes
+ api/data/infoflot/83/cabins/570.jpg    | Bin 0 -> 218817 bytes
+ api/data/infoflot/83/cabins/571.jpg    | Bin 0 -> 193796 bytes
+ api/data/infoflot/83/cabins/572.jpg    | Bin 0 -> 275300 bytes
+ api/data/infoflot/83/cabins/6935.jpg   | Bin 0 -> 204129 bytes
+ api/data/infoflot/83/cabins/6936.jpg   | Bin 0 -> 205667 bytes
+ api/data/mosturflot/139/139.jpg        | Bin 0 -> 270100 bytes
+ api/data/mosturflot/139/cabins/362.jpg |   0
+ api/data/mosturflot/139/cabins/363.jpg | Bin 0 -> 124904 bytes
+ api/data/mosturflot/139/cabins/365.jpg | Bin 0 -> 115520 bytes
+ api/data/mosturflot/139/cabins/366.jpg | Bin 0 -> 143823 bytes
+ api/data/mosturflot/139/cabins/367.jpg |   0
+ api/data/mosturflot/139/cabins/368.jpg | Bin 0 -> 130958 bytes
+ api/data/mosturflot/139/cabins/369.jpg |   0
+ api/data/mosturflot/139/cabins/370.jpg |   0
+ api/data/mosturflot/139/cabins/371.jpg |   0
+ api/data/mosturflot/139/cabins/547.jpg |   0
+ api/data/mosturflot/139/cabins/548.jpg | Bin 0 -> 133529 bytes
+ api/data/mosturflot/139/cabins/625.jpg | Bin 0 -> 99184 bytes
+ api/data/mosturflot/139/cabins/792.jpg | Bin 0 -> 186030 bytes
+ api/data/mosturflot/139/cabins/810.jpg | Bin 0 -> 137816 bytes
+ api/data/mosturflot/139/deckplan.png   | Bin 0 -> 97131 bytes
+ api/data/mosturflot/139/deckplan.svg   |   4 ++
+ api/data/mosturflot/139/decks.png      | Bin 0 -> 69554 bytes
+ api/data/mosturflot/14/14.jpg          | Bin 0 -> 249476 bytes
+ api/data/mosturflot/14/cabins/56.jpg   | Bin 0 -> 74989 bytes
+ api/data/mosturflot/14/cabins/57.jpg   | Bin 0 -> 65210 bytes
+ api/data/mosturflot/14/cabins/58.jpg   | Bin 0 -> 49918 bytes
+ api/data/mosturflot/14/cabins/59.jpg   | Bin 0 -> 49885 bytes
+ api/data/mosturflot/14/cabins/791.jpg  | Bin 0 -> 84119 bytes
+ api/data/mosturflot/14/deckplan.png    | Bin 0 -> 94555 bytes
+ api/data/mosturflot/14/deckplan.svg    |   4 ++
+ api/data/mosturflot/14/decks.png       | Bin 0 -> 69177 bytes
+ api/data/mosturflot/150/150.jpg        | Bin 0 -> 177334 bytes
+ api/data/mosturflot/150/cabins/409.jpg | Bin 0 -> 77024 bytes
+ api/data/mosturflot/150/cabins/410.jpg | Bin 0 -> 57871 bytes
+ api/data/mosturflot/150/cabins/411.jpg | Bin 0 -> 222466 bytes
+ api/data/mosturflot/150/cabins/412.jpg | Bin 0 -> 76887 bytes
+ api/data/mosturflot/150/cabins/413.jpg | Bin 0 -> 296866 bytes
+ api/data/mosturflot/150/cabins/879.jpg | Bin 0 -> 221217 bytes
+ api/data/mosturflot/150/deckplan.png   | Bin 0 -> 132415 bytes
+ api/data/mosturflot/150/deckplan.svg   |   4 ++
+ api/data/mosturflot/150/decks.jpg      | Bin 0 -> 94540 bytes
+ api/data/mosturflot/19/19.jpg          | Bin 0 -> 231343 bytes
+ api/data/mosturflot/19/cabins/624.jpg  | Bin 0 -> 63042 bytes
+ api/data/mosturflot/19/cabins/84.jpg   | Bin 0 -> 49888 bytes
+ api/data/mosturflot/19/cabins/85.jpg   | Bin 0 -> 56322 bytes
+ api/data/mosturflot/19/cabins/86.jpg   | Bin 0 -> 56322 bytes
+ api/data/mosturflot/19/cabins/87.jpg   | Bin 0 -> 56322 bytes
+ api/data/mosturflot/19/cabins/89.jpg   | Bin 0 -> 87561 bytes
+ api/data/mosturflot/19/deckplan.png    | Bin 0 -> 138176 bytes
+ api/data/mosturflot/19/deckplan.svg    |   4 ++
+ api/data/mosturflot/19/decks.png       | Bin 0 -> 101457 bytes
+ api/data/mosturflot/198/198.jpg        | Bin 0 -> 200777 bytes
+ api/data/mosturflot/198/cabins/516.jpg | Bin 0 -> 102316 bytes
+ api/data/mosturflot/198/cabins/517.jpg | Bin 0 -> 135587 bytes
+ api/data/mosturflot/198/cabins/518.jpg | Bin 0 -> 160092 bytes
+ api/data/mosturflot/198/cabins/519.jpg | Bin 0 -> 106824 bytes
+ api/data/mosturflot/198/cabins/520.jpg | Bin 0 -> 122423 bytes
+ api/data/mosturflot/198/cabins/521.jpg | Bin 0 -> 84534 bytes
+ api/data/mosturflot/198/cabins/523.jpg | Bin 0 -> 100078 bytes
+ api/data/mosturflot/198/cabins/524.jpg | Bin 0 -> 125420 bytes
+ api/data/mosturflot/198/cabins/677.jpg | Bin 0 -> 102576 bytes
+ api/data/mosturflot/198/deckplan.png   | Bin 0 -> 104866 bytes
+ api/data/mosturflot/198/deckplan.svg   |   4 ++
+ api/data/mosturflot/198/decks.png      | Bin 0 -> 39968 bytes
+ api/data/mosturflot/200/200.jpg        | Bin 0 -> 221686 bytes
+ api/data/mosturflot/200/cabins/528.jpg | Bin 0 -> 126016 bytes
+ api/data/mosturflot/200/cabins/529.jpg | Bin 0 -> 64236 bytes
+ api/data/mosturflot/200/cabins/530.jpg | Bin 0 -> 86979 bytes
+ api/data/mosturflot/200/cabins/531.jpg | Bin 0 -> 80655 bytes
+ api/data/mosturflot/200/cabins/532.jpg | Bin 0 -> 64236 bytes
+ api/data/mosturflot/200/cabins/533.jpg | Bin 0 -> 86979 bytes
+ api/data/mosturflot/200/cabins/534.jpg | Bin 0 -> 64236 bytes
+ api/data/mosturflot/200/deckplan.png   | Bin 0 -> 152084 bytes
+ api/data/mosturflot/200/deckplan.svg   |   4 ++
+ api/data/mosturflot/200/decks.png      | Bin 0 -> 43042 bytes
+ api/data/mosturflot/206/206.jpg        | Bin 0 -> 234113 bytes
+ api/data/mosturflot/206/cabins/628.jpg | Bin 0 -> 168104 bytes
+ api/data/mosturflot/206/cabins/629.jpg | Bin 0 -> 406028 bytes
+ api/data/mosturflot/206/cabins/630.jpg | Bin 0 -> 426515 bytes
+ api/data/mosturflot/206/cabins/631.jpg | Bin 0 -> 327052 bytes
+ api/data/mosturflot/206/cabins/632.jpg | Bin 0 -> 327052 bytes
+ api/data/mosturflot/206/cabins/633.jpg | Bin 0 -> 336705 bytes
+ api/data/mosturflot/206/cabins/634.jpg | Bin 0 -> 44380 bytes
+ api/data/mosturflot/206/cabins/635.jpg |   0
+ api/data/mosturflot/206/cabins/880.jpg | Bin 0 -> 130463 bytes
+ api/data/mosturflot/206/deckplan.png   | Bin 0 -> 132290 bytes
+ api/data/mosturflot/206/deckplan.svg   |   4 ++
+ api/data/mosturflot/206/decks.png      | Bin 0 -> 98960 bytes
+ api/data/mosturflot/207/207.jpg        | Bin 0 -> 221675 bytes
+ api/data/mosturflot/207/cabins/638.jpg | Bin 0 -> 120873 bytes
+ api/data/mosturflot/207/cabins/639.jpg | Bin 0 -> 155356 bytes
+ api/data/mosturflot/207/cabins/640.jpg | Bin 0 -> 175923 bytes
+ api/data/mosturflot/207/cabins/641.jpg | Bin 0 -> 155356 bytes
+ api/data/mosturflot/207/cabins/642.jpg | Bin 0 -> 87738 bytes
+ api/data/mosturflot/207/cabins/672.jpg |   0
+ api/data/mosturflot/207/deckplan.png   | Bin 0 -> 82647 bytes
+ api/data/mosturflot/207/deckplan.svg   |   4 ++
+ api/data/mosturflot/207/decks.png      | Bin 0 -> 60429 bytes
+ api/data/mosturflot/247/247.jpg        | Bin 0 -> 339652 bytes
+ api/data/mosturflot/247/cabins/811.jpg | Bin 0 -> 181118 bytes
+ api/data/mosturflot/247/cabins/812.jpg | Bin 0 -> 154176 bytes
+ api/data/mosturflot/247/cabins/813.jpg | Bin 0 -> 154176 bytes
+ api/data/mosturflot/247/cabins/814.jpg | Bin 0 -> 194168 bytes
+ api/data/mosturflot/247/cabins/933.jpg | Bin 0 -> 188385 bytes
+ api/data/mosturflot/247/cabins/934.jpg | Bin 0 -> 186269 bytes
+ api/data/mosturflot/247/cabins/935.jpg | Bin 0 -> 29831 bytes
+ api/data/mosturflot/247/deckplan.png   | Bin 0 -> 96904 bytes
+ api/data/mosturflot/247/deckplan.svg   |   4 ++
+ api/data/mosturflot/247/decks.png      | Bin 0 -> 40113 bytes
+ api/data/mosturflot/36/36.jpg          | Bin 0 -> 137776 bytes
+ api/data/mosturflot/36/cabins/133.jpg  | Bin 0 -> 115617 bytes
+ api/data/mosturflot/36/cabins/134.jpg  | Bin 0 -> 132443 bytes
+ api/data/mosturflot/36/cabins/135.jpg  | Bin 0 -> 115617 bytes
+ api/data/mosturflot/36/cabins/623.jpg  | Bin 0 -> 81891 bytes
+ api/data/mosturflot/36/cabins/675.jpg  | Bin 0 -> 132443 bytes
+ api/data/mosturflot/36/cabins/696.jpg  | Bin 0 -> 83498 bytes
+ api/data/mosturflot/36/cabins/793.jpg  | Bin 0 -> 127422 bytes
+ api/data/mosturflot/36/deckplan.png    | Bin 0 -> 96045 bytes
+ api/data/mosturflot/36/deckplan.svg    |   4 ++
+ api/data/mosturflot/36/decks.png       | Bin 0 -> 69466 bytes
+ api/data/mosturflot/5/5.jpg            | Bin 0 -> 212135 bytes
+ api/data/mosturflot/5/cabins/17.jpg    | Bin 0 -> 87296 bytes
+ api/data/mosturflot/5/cabins/19.jpg    | Bin 0 -> 80379 bytes
+ api/data/mosturflot/5/cabins/21.jpg    | Bin 0 -> 84031 bytes
+ api/data/mosturflot/5/cabins/543.jpg   | Bin 0 -> 87648 bytes
+ api/data/mosturflot/5/cabins/544.jpg   | Bin 0 -> 242228 bytes
+ api/data/mosturflot/5/cabins/626.jpg   | Bin 0 -> 230308 bytes
+ api/data/mosturflot/5/deckplan.png     | Bin 0 -> 100945 bytes
+ api/data/mosturflot/5/deckplan.svg     |   4 ++
+ api/data/mosturflot/5/decks.png        | Bin 0 -> 84189 bytes
+ api/data/mosturflot/72/72.jpg          | Bin 0 -> 176101 bytes
+ api/data/mosturflot/72/cabins/159.jpg  | Bin 0 -> 116407 bytes
+ api/data/mosturflot/72/cabins/160.jpg  | Bin 0 -> 85180 bytes
+ api/data/mosturflot/72/cabins/161.jpg  | Bin 0 -> 98791 bytes
+ api/data/mosturflot/72/cabins/162.jpg  | Bin 0 -> 86269 bytes
+ api/data/mosturflot/72/cabins/163.jpg  | Bin 0 -> 121700 bytes
+ api/data/mosturflot/72/cabins/164.jpg  | Bin 0 -> 80216 bytes
+ api/data/mosturflot/72/cabins/165.jpg  | Bin 0 -> 102176 bytes
+ api/data/mosturflot/72/deckplan.png    | Bin 0 -> 100366 bytes
+ api/data/mosturflot/72/deckplan.svg    |   4 ++
+ api/data/mosturflot/72/decks.png       | Bin 0 -> 39817 bytes
+ api/data/mosturflot/91/91.jpg          | Bin 0 -> 374400 bytes
+ api/data/mosturflot/91/cabins/262.jpg  | Bin 0 -> 289790 bytes
+ api/data/mosturflot/91/cabins/263.jpg  | Bin 0 -> 150736 bytes
+ api/data/mosturflot/91/cabins/264.jpg  | Bin 0 -> 150736 bytes
+ api/data/mosturflot/91/cabins/265.jpg  | Bin 0 -> 150736 bytes
+ api/data/mosturflot/91/cabins/266.jpg  | Bin 0 -> 283316 bytes
+ api/data/mosturflot/91/cabins/267.jpg  | Bin 0 -> 261889 bytes
+ api/data/mosturflot/91/deckplan.png    | Bin 0 -> 236919 bytes
+ api/data/mosturflot/91/deckplan.svg    |   4 ++
+ api/data/mosturflot/91/decks.jpg       | Bin 0 -> 71153 bytes
+ api/data/mosturflot/92/92.jpg          | Bin 0 -> 220536 bytes
+ api/data/mosturflot/92/cabins/268.jpg  | Bin 0 -> 97419 bytes
+ api/data/mosturflot/92/cabins/269.jpg  | Bin 0 -> 106887 bytes
+ api/data/mosturflot/92/cabins/270.jpg  | Bin 0 -> 103536 bytes
+ api/data/mosturflot/92/cabins/271.jpg  | Bin 0 -> 69854 bytes
+ api/data/mosturflot/92/cabins/272.jpg  | Bin 0 -> 108472 bytes
+ api/data/mosturflot/92/cabins/273.jpg  | Bin 0 -> 106925 bytes
+ api/data/mosturflot/92/cabins/274.jpg  | Bin 0 -> 74736 bytes
+ api/data/mosturflot/92/cabins/275.jpg  | Bin 0 -> 107353 bytes
+ api/data/mosturflot/92/cabins/276.jpg  | Bin 0 -> 85971 bytes
+ api/data/mosturflot/92/deckplan.png    | Bin 0 -> 104180 bytes
+ api/data/mosturflot/92/deckplan.svg    |   4 ++
+ api/data/mosturflot/92/decks.png       | Bin 0 -> 43389 bytes
+ api/data/vodohod/1/1.jpg               | Bin 0 -> 280644 bytes
+ api/data/vodohod/1/cabins/0.jpg        | Bin 0 -> 141943 bytes
+ api/data/vodohod/1/cabins/1.jpg        | Bin 0 -> 151472 bytes
+ api/data/vodohod/1/cabins/2.jpg        | Bin 0 -> 87862 bytes
+ api/data/vodohod/1/cabins/3.jpg        | Bin 0 -> 69771 bytes
+ api/data/vodohod/1/cabins/4.jpg        | Bin 0 -> 87482 bytes
+ api/data/vodohod/1/cabins/5.jpg        | Bin 0 -> 163310 bytes
+ api/data/vodohod/1/dekplan.gif         | Bin 0 -> 188962 bytes
+ api/data/vodohod/10/10.jpg             | Bin 0 -> 138244 bytes
+ api/data/vodohod/10/cabins/0.jpg       | Bin 0 -> 191209 bytes
+ api/data/vodohod/10/cabins/1.jpg       | Bin 0 -> 93325 bytes
+ api/data/vodohod/10/cabins/2.jpg       | Bin 0 -> 122307 bytes
+ api/data/vodohod/10/cabins/3.jpg       | Bin 0 -> 168837 bytes
+ api/data/vodohod/10/cabins/4.jpg       | Bin 0 -> 100730 bytes
+ api/data/vodohod/10/dekplan.gif        | Bin 0 -> 80572 bytes
+ api/data/vodohod/11/11.jpg             | Bin 0 -> 266205 bytes
+ api/data/vodohod/11/cabins/0.jpg       | Bin 0 -> 98315 bytes
+ api/data/vodohod/11/cabins/1.jpg       | Bin 0 -> 91811 bytes
+ api/data/vodohod/11/cabins/2.jpg       | Bin 0 -> 68794 bytes
+ api/data/vodohod/11/cabins/3.jpg       | Bin 0 -> 86072 bytes
+ api/data/vodohod/11/dekplan.gif        | Bin 0 -> 137902 bytes
+ api/data/vodohod/14/14.jpg             | Bin 0 -> 278086 bytes
+ api/data/vodohod/14/cabins/0.jpg       | Bin 0 -> 41426 bytes
+ api/data/vodohod/14/cabins/1.jpg       | Bin 0 -> 79951 bytes
+ api/data/vodohod/14/cabins/2.jpg       | Bin 0 -> 79402 bytes
+ api/data/vodohod/14/cabins/3.jpg       | Bin 0 -> 85387 bytes
+ api/data/vodohod/14/dekplan.gif        | Bin 0 -> 135823 bytes
+ api/data/vodohod/15/15.jpg             | Bin 0 -> 285655 bytes
+ api/data/vodohod/15/cabins/0.jpg       | Bin 0 -> 75872 bytes
+ api/data/vodohod/15/cabins/1.jpg       | Bin 0 -> 62772 bytes
+ api/data/vodohod/15/cabins/2.jpg       | Bin 0 -> 40596 bytes
+ api/data/vodohod/15/cabins/3.jpg       | Bin 0 -> 63751 bytes
+ api/data/vodohod/15/dekplan.gif        | Bin 0 -> 137044 bytes
+ api/data/vodohod/16/16.jpg             | Bin 0 -> 347398 bytes
+ api/data/vodohod/16/cabins/0.jpg       | Bin 0 -> 88886 bytes
+ api/data/vodohod/16/cabins/1.jpg       | Bin 0 -> 76041 bytes
+ api/data/vodohod/16/cabins/2.jpg       | Bin 0 -> 87955 bytes
+ api/data/vodohod/16/cabins/3.jpg       | Bin 0 -> 140042 bytes
+ api/data/vodohod/16/cabins/4.jpg       | Bin 0 -> 184910 bytes
+ api/data/vodohod/16/cabins/5.jpg       | Bin 0 -> 186658 bytes
+ api/data/vodohod/16/dekplan.gif        | Bin 0 -> 80662 bytes
+ api/data/vodohod/29/29.jpg             | Bin 0 -> 277131 bytes
+ api/data/vodohod/29/cabins/0.jpg       | Bin 0 -> 132291 bytes
+ api/data/vodohod/29/cabins/1.jpg       | Bin 0 -> 53100 bytes
+ api/data/vodohod/29/cabins/2.jpg       | Bin 0 -> 95743 bytes
+ api/data/vodohod/29/cabins/3.jpg       | Bin 0 -> 132466 bytes
+ api/data/vodohod/29/cabins/4.jpg       | Bin 0 -> 61140 bytes
+ api/data/vodohod/29/cabins/5.jpg       | Bin 0 -> 95959 bytes
+ api/data/vodohod/29/dekplan.gif        | Bin 0 -> 210855 bytes
+ api/data/vodohod/3/3.jpg               | Bin 0 -> 268156 bytes
+ api/data/vodohod/3/cabins/0.jpg        | Bin 0 -> 44136 bytes
+ api/data/vodohod/3/cabins/1.jpg        | Bin 0 -> 47009 bytes
+ api/data/vodohod/3/cabins/2.jpg        | Bin 0 -> 44774 bytes
+ api/data/vodohod/3/cabins/3.jpg        | Bin 0 -> 69635 bytes
+ api/data/vodohod/3/cabins/4.jpg        | Bin 0 -> 85251 bytes
+ api/data/vodohod/3/dekplan.gif         | Bin 0 -> 342051 bytes
+ api/data/vodohod/32/32.jpg             | Bin 0 -> 253516 bytes
+ api/data/vodohod/32/cabins/0.jpg       | Bin 0 -> 84428 bytes
+ api/data/vodohod/32/cabins/1.jpg       | Bin 0 -> 138294 bytes
+ api/data/vodohod/32/cabins/2.jpg       | Bin 0 -> 74610 bytes
+ api/data/vodohod/32/cabins/3.jpg       | Bin 0 -> 81504 bytes
+ api/data/vodohod/32/cabins/4.jpg       | Bin 0 -> 121935 bytes
+ api/data/vodohod/32/cabins/5.jpg       | Bin 0 -> 203216 bytes
+ api/data/vodohod/32/cabins/6.jpg       | Bin 0 -> 80520 bytes
+ api/data/vodohod/32/cabins/7.jpg       | Bin 0 -> 211195 bytes
+ api/data/vodohod/32/cabins/8.jpg       | Bin 0 -> 141704 bytes
+ api/data/vodohod/32/dekplan.gif        | Bin 0 -> 119575 bytes
+ api/data/vodohod/37/37.jpg             | Bin 0 -> 184335 bytes
+ api/data/vodohod/37/cabins/0.jpg       | Bin 0 -> 82824 bytes
+ api/data/vodohod/37/cabins/1.jpg       | Bin 0 -> 74372 bytes
+ api/data/vodohod/37/cabins/2.jpg       | Bin 0 -> 86682 bytes
+ api/data/vodohod/37/cabins/3.jpg       | Bin 0 -> 101849 bytes
+ api/data/vodohod/37/cabins/4.jpg       | Bin 0 -> 64453 bytes
+ api/data/vodohod/37/dekplan.gif        | Bin 0 -> 162483 bytes
+ api/data/vodohod/4/4.jpg               | Bin 0 -> 91430 bytes
+ api/data/vodohod/4/cabins/0.jpg        | Bin 0 -> 135278 bytes
+ api/data/vodohod/4/cabins/1.jpg        | Bin 0 -> 131231 bytes
+ api/data/vodohod/4/cabins/2.jpg        | Bin 0 -> 127739 bytes
+ api/data/vodohod/4/cabins/3.jpg        | Bin 0 -> 127095 bytes
+ api/data/vodohod/4/dekplan.gif         | Bin 0 -> 132268 bytes
+ api/data/vodohod/42/42.jpg             | Bin 0 -> 325538 bytes
+ api/data/vodohod/42/cabins/0.jpg       | Bin 0 -> 155265 bytes
+ api/data/vodohod/42/cabins/1.jpg       | Bin 0 -> 175097 bytes
+ api/data/vodohod/42/cabins/2.jpg       | Bin 0 -> 150565 bytes
+ api/data/vodohod/42/cabins/3.jpg       | Bin 0 -> 155017 bytes
+ api/data/vodohod/42/cabins/4.jpg       | Bin 0 -> 154672 bytes
+ api/data/vodohod/42/cabins/5.jpg       | Bin 0 -> 181732 bytes
+ api/data/vodohod/42/dekplan.gif        | Bin 0 -> 188495 bytes
+ api/data/vodohod/50/50.jpg             | Bin 0 -> 309398 bytes
+ api/data/vodohod/50/cabins/0.jpg       | Bin 0 -> 137096 bytes
+ api/data/vodohod/50/cabins/1.jpg       | Bin 0 -> 129352 bytes
+ api/data/vodohod/50/cabins/2.jpg       | Bin 0 -> 185022 bytes
+ api/data/vodohod/50/cabins/3.jpg       | Bin 0 -> 176206 bytes
+ api/data/vodohod/50/cabins/4.jpg       | Bin 0 -> 147156 bytes
+ api/data/vodohod/50/cabins/5.jpg       | Bin 0 -> 167983 bytes
+ api/data/vodohod/50/cabins/6.jpg       | Bin 0 -> 133484 bytes
+ api/data/vodohod/50/dekplan.gif        | Bin 0 -> 93879 bytes
+ api/data/vodohod/6/6.jpg               | Bin 0 -> 278855 bytes
+ api/data/vodohod/6/cabins/0.jpg        | Bin 0 -> 142031 bytes
+ api/data/vodohod/6/cabins/1.jpg        | Bin 0 -> 37047 bytes
+ api/data/vodohod/6/cabins/2.jpg        | Bin 0 -> 90897 bytes
+ api/data/vodohod/6/cabins/3.jpg        | Bin 0 -> 77412 bytes
+ api/data/vodohod/6/cabins/4.jpg        | Bin 0 -> 101894 bytes
+ api/data/vodohod/6/cabins/5.jpg        | Bin 0 -> 40150 bytes
+ api/data/vodohod/6/dekplan.gif         | Bin 0 -> 148719 bytes
+ api/data/vodohod/69/69.jpg             | Bin 0 -> 225336 bytes
+ api/data/vodohod/69/cabins/0.jpg       | Bin 0 -> 124582 bytes
+ api/data/vodohod/69/cabins/1.jpg       | Bin 0 -> 64210 bytes
+ api/data/vodohod/69/cabins/2.jpg       | Bin 0 -> 128060 bytes
+ api/data/vodohod/69/cabins/3.jpg       | Bin 0 -> 65000 bytes
+ api/data/vodohod/69/dekplan.gif        | Bin 0 -> 137481 bytes
+ api/data/vodohod/7/7.jpg               | Bin 0 -> 255370 bytes
+ api/data/vodohod/7/cabins/0.jpg        | Bin 0 -> 117538 bytes
+ api/data/vodohod/7/cabins/1.jpg        | Bin 0 -> 105894 bytes
+ api/data/vodohod/7/cabins/2.jpg        | Bin 0 -> 92321 bytes
+ api/data/vodohod/7/cabins/3.jpg        | Bin 0 -> 99365 bytes
+ api/data/vodohod/7/cabins/4.jpg        | Bin 0 -> 80021 bytes
+ api/data/vodohod/7/dekplan.gif         | Bin 0 -> 74147 bytes
+ api/data/vodohod/90/90.jpg             | Bin 0 -> 395895 bytes
+ api/data/vodohod/90/cabins/0.jpg       | Bin 0 -> 148447 bytes
+ api/data/vodohod/90/cabins/1.jpg       | Bin 0 -> 104225 bytes
+ api/data/vodohod/90/cabins/2.jpg       | Bin 0 -> 179331 bytes
+ api/data/vodohod/90/cabins/3.jpg       | Bin 0 -> 200165 bytes
+ api/data/vodohod/90/cabins/4.jpg       | Bin 0 -> 191047 bytes
+ api/data/vodohod/90/cabins/5.jpg       | Bin 0 -> 165466 bytes
+ api/data/vodohod/90/dekplan.gif        | Bin 0 -> 136057 bytes
+ api/ships-infoflot.json                |   1 +
+ api/ships-mosturflot.json              |   1 +
+ api/ships-vodohod.json                 |   1 +
+ api/test.php                           |  10 ++++
+ 398 files changed, 486 insertions(+), 3 deletions(-)
+ create mode 100644 api/api-mosturflot.php
+ create mode 100644 api/api-vodohod-bak.php
+ create mode 100644 api/api-vodohod-img.php
+ create mode 100644 api/api-vodohod.php
+ create mode 100644 api/data/infoflot/1.jpg
+ create mode 100644 api/data/infoflot/1/1.jpg
+ create mode 100644 api/data/infoflot/1/cabins/10.jpg
+ create mode 100644 api/data/infoflot/1/cabins/14.jpg
+ create mode 100644 api/data/infoflot/1/cabins/146.jpg
+ create mode 100644 api/data/infoflot/1/cabins/148.jpg
+ create mode 100644 api/data/infoflot/1/cabins/149.jpg
+ create mode 100644 api/data/infoflot/1/cabins/3348.jpg
+ create mode 100644 api/data/infoflot/1/cabins/4007.jpg
+ create mode 100644 api/data/infoflot/1/cabins/6.jpg
+ create mode 100644 api/data/infoflot/1/cabins/7.jpg
+ create mode 100644 api/data/infoflot/1/cabins/867.jpg
+ create mode 100644 api/data/infoflot/1/cabins/9.jpg
+ create mode 100644 api/data/infoflot/1/cabins/92.jpg
+ create mode 100644 api/data/infoflot/260.jpg
+ create mode 100644 api/data/infoflot/260/260.jpg
+ create mode 100644 api/data/infoflot/3.jpg
+ create mode 100644 api/data/infoflot/3/3.jpg
+ create mode 100644 api/data/infoflot/3/cabins/31.jpg
+ create mode 100644 api/data/infoflot/3/cabins/32.jpg
+ create mode 100644 api/data/infoflot/38.jpg
+ create mode 100644 api/data/infoflot/38/38.jpg
+ create mode 100644 api/data/infoflot/38/cabins/304.jpg
+ create mode 100644 api/data/infoflot/38/cabins/305.jpg
+ create mode 100644 api/data/infoflot/38/cabins/306.jpg
+ create mode 100644 api/data/infoflot/38/cabins/307.jpg
+ create mode 100644 api/data/infoflot/38/cabins/308.jpg
+ create mode 100644 api/data/infoflot/38/cabins/309.jpg
+ create mode 100644 api/data/infoflot/38/cabins/310.jpg
+ create mode 100644 api/data/infoflot/38/cabins/3252.jpg
+ create mode 100644 api/data/infoflot/4.jpg
+ create mode 100644 api/data/infoflot/4/4.jpg
+ create mode 100644 api/data/infoflot/4/cabins/3253.jpg
+ create mode 100644 api/data/infoflot/4/cabins/41.jpg
+ create mode 100644 api/data/infoflot/4/cabins/42.jpg
+ create mode 100644 api/data/infoflot/4/cabins/43.jpg
+ create mode 100644 api/data/infoflot/4/cabins/78.jpg
+ create mode 100644 api/data/infoflot/4/cabins/79.jpg
+ create mode 100644 api/data/infoflot/4/cabins/81.jpg
+ create mode 100644 api/data/infoflot/4/cabins/82.jpg
+ create mode 100644 api/data/infoflot/4/cabins/843.jpg
+ create mode 100644 api/data/infoflot/478.jpg
+ create mode 100644 api/data/infoflot/478/478.jpg
+ create mode 100644 api/data/infoflot/478/cabins/4013.jpg
+ create mode 100644 api/data/infoflot/478/cabins/4015.jpg
+ create mode 100644 api/data/infoflot/478/cabins/4016.jpg
+ create mode 100644 api/data/infoflot/478/cabins/4019.jpg
+ create mode 100644 api/data/infoflot/478/cabins/4020.jpg
+ create mode 100644 api/data/infoflot/478/cabins/4021.jpg
+ create mode 100644 api/data/infoflot/478/cabins/4022.jpg
+ create mode 100644 api/data/infoflot/478/cabins/5193.jpg
+ create mode 100644 api/data/infoflot/478/cabins/5808.jpg
+ create mode 100644 api/data/infoflot/487.jpg
+ create mode 100644 api/data/infoflot/487/487.jpg
+ create mode 100644 api/data/infoflot/498.jpg
+ create mode 100644 api/data/infoflot/498/498.jpg
+ create mode 100644 api/data/infoflot/498/cabins/4853.jpg
+ create mode 100644 api/data/infoflot/498/cabins/4854.jpg
+ create mode 100644 api/data/infoflot/498/cabins/4857.jpg
+ create mode 100644 api/data/infoflot/498/cabins/4859.jpg
+ create mode 100644 api/data/infoflot/498/cabins/4860.jpg
+ create mode 100644 api/data/infoflot/498/cabins/4861.jpg
+ create mode 100644 api/data/infoflot/498/cabins/5466.jpg
+ create mode 100644 api/data/infoflot/498/cabins/5467.jpg
+ create mode 100644 api/data/infoflot/498/cabins/5468.jpg
+ create mode 100644 api/data/infoflot/498/cabins/5469.jpg
+ create mode 100644 api/data/infoflot/498/cabins/5807.jpg
+ create mode 100644 api/data/infoflot/571.jpg
+ create mode 100644 api/data/infoflot/571/571.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5601.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5602.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5603.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5604.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5605.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5606.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5607.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5608.jpg
+ create mode 100644 api/data/infoflot/571/cabins/5609.jpg
+ create mode 100644 api/data/infoflot/64.jpg
+ create mode 100644 api/data/infoflot/64/64.jpg
+ create mode 100644 api/data/infoflot/7.jpg
+ create mode 100644 api/data/infoflot/7/7.jpg
+ create mode 100644 api/data/infoflot/7/cabins/408.jpg
+ create mode 100644 api/data/infoflot/7/cabins/65.jpg
+ create mode 100644 api/data/infoflot/7/cabins/66.jpg
+ create mode 100644 api/data/infoflot/7/cabins/68.jpg
+ create mode 100644 api/data/infoflot/7/cabins/70.jpg
+ create mode 100644 api/data/infoflot/7/cabins/74.jpg
+ create mode 100644 api/data/infoflot/7/cabins/848.jpg
+ create mode 100644 api/data/infoflot/7/cabins/849.jpg
+ create mode 100644 api/data/infoflot/7/cabins/850.jpg
+ create mode 100644 api/data/infoflot/7/cabins/851.jpg
+ create mode 100644 api/data/infoflot/83.jpg
+ create mode 100644 api/data/infoflot/83/83.jpg
+ create mode 100644 api/data/infoflot/83/cabins/3342.jpg
+ create mode 100644 api/data/infoflot/83/cabins/567.jpg
+ create mode 100644 api/data/infoflot/83/cabins/568.jpg
+ create mode 100644 api/data/infoflot/83/cabins/569.jpg
+ create mode 100644 api/data/infoflot/83/cabins/570.jpg
+ create mode 100644 api/data/infoflot/83/cabins/571.jpg
+ create mode 100644 api/data/infoflot/83/cabins/572.jpg
+ create mode 100644 api/data/infoflot/83/cabins/6935.jpg
+ create mode 100644 api/data/infoflot/83/cabins/6936.jpg
+ create mode 100644 api/data/mosturflot/139/139.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/362.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/363.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/365.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/366.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/367.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/368.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/369.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/370.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/371.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/547.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/548.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/625.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/792.jpg
+ create mode 100644 api/data/mosturflot/139/cabins/810.jpg
+ create mode 100644 api/data/mosturflot/139/deckplan.png
+ create mode 100644 api/data/mosturflot/139/deckplan.svg
+ create mode 100644 api/data/mosturflot/139/decks.png
+ create mode 100644 api/data/mosturflot/14/14.jpg
+ create mode 100644 api/data/mosturflot/14/cabins/56.jpg
+ create mode 100644 api/data/mosturflot/14/cabins/57.jpg
+ create mode 100644 api/data/mosturflot/14/cabins/58.jpg
+ create mode 100644 api/data/mosturflot/14/cabins/59.jpg
+ create mode 100644 api/data/mosturflot/14/cabins/791.jpg
+ create mode 100644 api/data/mosturflot/14/deckplan.png
+ create mode 100644 api/data/mosturflot/14/deckplan.svg
+ create mode 100644 api/data/mosturflot/14/decks.png
+ create mode 100644 api/data/mosturflot/150/150.jpg
+ create mode 100644 api/data/mosturflot/150/cabins/409.jpg
+ create mode 100644 api/data/mosturflot/150/cabins/410.jpg
+ create mode 100644 api/data/mosturflot/150/cabins/411.jpg
+ create mode 100644 api/data/mosturflot/150/cabins/412.jpg
+ create mode 100644 api/data/mosturflot/150/cabins/413.jpg
+ create mode 100644 api/data/mosturflot/150/cabins/879.jpg
+ create mode 100644 api/data/mosturflot/150/deckplan.png
+ create mode 100644 api/data/mosturflot/150/deckplan.svg
+ create mode 100644 api/data/mosturflot/150/decks.jpg
+ create mode 100644 api/data/mosturflot/19/19.jpg
+ create mode 100644 api/data/mosturflot/19/cabins/624.jpg
+ create mode 100644 api/data/mosturflot/19/cabins/84.jpg
+ create mode 100644 api/data/mosturflot/19/cabins/85.jpg
+ create mode 100644 api/data/mosturflot/19/cabins/86.jpg
+ create mode 100644 api/data/mosturflot/19/cabins/87.jpg
+ create mode 100644 api/data/mosturflot/19/cabins/89.jpg
+ create mode 100644 api/data/mosturflot/19/deckplan.png
+ create mode 100644 api/data/mosturflot/19/deckplan.svg
+ create mode 100644 api/data/mosturflot/19/decks.png
+ create mode 100644 api/data/mosturflot/198/198.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/516.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/517.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/518.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/519.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/520.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/521.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/523.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/524.jpg
+ create mode 100644 api/data/mosturflot/198/cabins/677.jpg
+ create mode 100644 api/data/mosturflot/198/deckplan.png
+ create mode 100644 api/data/mosturflot/198/deckplan.svg
+ create mode 100644 api/data/mosturflot/198/decks.png
+ create mode 100644 api/data/mosturflot/200/200.jpg
+ create mode 100644 api/data/mosturflot/200/cabins/528.jpg
+ create mode 100644 api/data/mosturflot/200/cabins/529.jpg
+ create mode 100644 api/data/mosturflot/200/cabins/530.jpg
+ create mode 100644 api/data/mosturflot/200/cabins/531.jpg
+ create mode 100644 api/data/mosturflot/200/cabins/532.jpg
+ create mode 100644 api/data/mosturflot/200/cabins/533.jpg
+ create mode 100644 api/data/mosturflot/200/cabins/534.jpg
+ create mode 100644 api/data/mosturflot/200/deckplan.png
+ create mode 100644 api/data/mosturflot/200/deckplan.svg
+ create mode 100644 api/data/mosturflot/200/decks.png
+ create mode 100644 api/data/mosturflot/206/206.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/628.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/629.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/630.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/631.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/632.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/633.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/634.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/635.jpg
+ create mode 100644 api/data/mosturflot/206/cabins/880.jpg
+ create mode 100644 api/data/mosturflot/206/deckplan.png
+ create mode 100644 api/data/mosturflot/206/deckplan.svg
+ create mode 100644 api/data/mosturflot/206/decks.png
+ create mode 100644 api/data/mosturflot/207/207.jpg
+ create mode 100644 api/data/mosturflot/207/cabins/638.jpg
+ create mode 100644 api/data/mosturflot/207/cabins/639.jpg
+ create mode 100644 api/data/mosturflot/207/cabins/640.jpg
+ create mode 100644 api/data/mosturflot/207/cabins/641.jpg
+ create mode 100644 api/data/mosturflot/207/cabins/642.jpg
+ create mode 100644 api/data/mosturflot/207/cabins/672.jpg
+ create mode 100644 api/data/mosturflot/207/deckplan.png
+ create mode 100644 api/data/mosturflot/207/deckplan.svg
+ create mode 100644 api/data/mosturflot/207/decks.png
+ create mode 100644 api/data/mosturflot/247/247.jpg
+ create mode 100644 api/data/mosturflot/247/cabins/811.jpg
+ create mode 100644 api/data/mosturflot/247/cabins/812.jpg
+ create mode 100644 api/data/mosturflot/247/cabins/813.jpg
+ create mode 100644 api/data/mosturflot/247/cabins/814.jpg
+ create mode 100644 api/data/mosturflot/247/cabins/933.jpg
+ create mode 100644 api/data/mosturflot/247/cabins/934.jpg
+ create mode 100644 api/data/mosturflot/247/cabins/935.jpg
+ create mode 100644 api/data/mosturflot/247/deckplan.png
+ create mode 100644 api/data/mosturflot/247/deckplan.svg
+ create mode 100644 api/data/mosturflot/247/decks.png
+ create mode 100644 api/data/mosturflot/36/36.jpg
+ create mode 100644 api/data/mosturflot/36/cabins/133.jpg
+ create mode 100644 api/data/mosturflot/36/cabins/134.jpg
+ create mode 100644 api/data/mosturflot/36/cabins/135.jpg
+ create mode 100644 api/data/mosturflot/36/cabins/623.jpg
+ create mode 100644 api/data/mosturflot/36/cabins/675.jpg
+ create mode 100644 api/data/mosturflot/36/cabins/696.jpg
+ create mode 100644 api/data/mosturflot/36/cabins/793.jpg
+ create mode 100644 api/data/mosturflot/36/deckplan.png
+ create mode 100644 api/data/mosturflot/36/deckplan.svg
+ create mode 100644 api/data/mosturflot/36/decks.png
+ create mode 100644 api/data/mosturflot/5/5.jpg
+ create mode 100644 api/data/mosturflot/5/cabins/17.jpg
+ create mode 100644 api/data/mosturflot/5/cabins/19.jpg
+ create mode 100644 api/data/mosturflot/5/cabins/21.jpg
+ create mode 100644 api/data/mosturflot/5/cabins/543.jpg
+ create mode 100644 api/data/mosturflot/5/cabins/544.jpg
+ create mode 100644 api/data/mosturflot/5/cabins/626.jpg
+ create mode 100644 api/data/mosturflot/5/deckplan.png
+ create mode 100644 api/data/mosturflot/5/deckplan.svg
+ create mode 100644 api/data/mosturflot/5/decks.png
+ create mode 100644 api/data/mosturflot/72/72.jpg
+ create mode 100644 api/data/mosturflot/72/cabins/159.jpg
+ create mode 100644 api/data/mosturflot/72/cabins/160.jpg
+ create mode 100644 api/data/mosturflot/72/cabins/161.jpg
+ create mode 100644 api/data/mosturflot/72/cabins/162.jpg
+ create mode 100644 api/data/mosturflot/72/cabins/163.jpg
+ create mode 100644 api/data/mosturflot/72/cabins/164.jpg
+ create mode 100644 api/data/mosturflot/72/cabins/165.jpg
+ create mode 100644 api/data/mosturflot/72/deckplan.png
+ create mode 100644 api/data/mosturflot/72/deckplan.svg
+ create mode 100644 api/data/mosturflot/72/decks.png
+ create mode 100644 api/data/mosturflot/91/91.jpg
+ create mode 100644 api/data/mosturflot/91/cabins/262.jpg
+ create mode 100644 api/data/mosturflot/91/cabins/263.jpg
+ create mode 100644 api/data/mosturflot/91/cabins/264.jpg
+ create mode 100644 api/data/mosturflot/91/cabins/265.jpg
+ create mode 100644 api/data/mosturflot/91/cabins/266.jpg
+ create mode 100644 api/data/mosturflot/91/cabins/267.jpg
+ create mode 100644 api/data/mosturflot/91/deckplan.png
+ create mode 100644 api/data/mosturflot/91/deckplan.svg
+ create mode 100644 api/data/mosturflot/91/decks.jpg
+ create mode 100644 api/data/mosturflot/92/92.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/268.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/269.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/270.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/271.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/272.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/273.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/274.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/275.jpg
+ create mode 100644 api/data/mosturflot/92/cabins/276.jpg
+ create mode 100644 api/data/mosturflot/92/deckplan.png
+ create mode 100644 api/data/mosturflot/92/deckplan.svg
+ create mode 100644 api/data/mosturflot/92/decks.png
+ create mode 100644 api/data/vodohod/1/1.jpg
+ create mode 100644 api/data/vodohod/1/cabins/0.jpg
+ create mode 100644 api/data/vodohod/1/cabins/1.jpg
+ create mode 100644 api/data/vodohod/1/cabins/2.jpg
+ create mode 100644 api/data/vodohod/1/cabins/3.jpg
+ create mode 100644 api/data/vodohod/1/cabins/4.jpg
+ create mode 100644 api/data/vodohod/1/cabins/5.jpg
+ create mode 100644 api/data/vodohod/1/dekplan.gif
+ create mode 100644 api/data/vodohod/10/10.jpg
+ create mode 100644 api/data/vodohod/10/cabins/0.jpg
+ create mode 100644 api/data/vodohod/10/cabins/1.jpg
+ create mode 100644 api/data/vodohod/10/cabins/2.jpg
+ create mode 100644 api/data/vodohod/10/cabins/3.jpg
+ create mode 100644 api/data/vodohod/10/cabins/4.jpg
+ create mode 100644 api/data/vodohod/10/dekplan.gif
+ create mode 100644 api/data/vodohod/11/11.jpg
+ create mode 100644 api/data/vodohod/11/cabins/0.jpg
+ create mode 100644 api/data/vodohod/11/cabins/1.jpg
+ create mode 100644 api/data/vodohod/11/cabins/2.jpg
+ create mode 100644 api/data/vodohod/11/cabins/3.jpg
+ create mode 100644 api/data/vodohod/11/dekplan.gif
+ create mode 100644 api/data/vodohod/14/14.jpg
+ create mode 100644 api/data/vodohod/14/cabins/0.jpg
+ create mode 100644 api/data/vodohod/14/cabins/1.jpg
+ create mode 100644 api/data/vodohod/14/cabins/2.jpg
+ create mode 100644 api/data/vodohod/14/cabins/3.jpg
+ create mode 100644 api/data/vodohod/14/dekplan.gif
+ create mode 100644 api/data/vodohod/15/15.jpg
+ create mode 100644 api/data/vodohod/15/cabins/0.jpg
+ create mode 100644 api/data/vodohod/15/cabins/1.jpg
+ create mode 100644 api/data/vodohod/15/cabins/2.jpg
+ create mode 100644 api/data/vodohod/15/cabins/3.jpg
+ create mode 100644 api/data/vodohod/15/dekplan.gif
+ create mode 100644 api/data/vodohod/16/16.jpg
+ create mode 100644 api/data/vodohod/16/cabins/0.jpg
+ create mode 100644 api/data/vodohod/16/cabins/1.jpg
+ create mode 100644 api/data/vodohod/16/cabins/2.jpg
+ create mode 100644 api/data/vodohod/16/cabins/3.jpg
+ create mode 100644 api/data/vodohod/16/cabins/4.jpg
+ create mode 100644 api/data/vodohod/16/cabins/5.jpg
+ create mode 100644 api/data/vodohod/16/dekplan.gif
+ create mode 100644 api/data/vodohod/29/29.jpg
+ create mode 100644 api/data/vodohod/29/cabins/0.jpg
+ create mode 100644 api/data/vodohod/29/cabins/1.jpg
+ create mode 100644 api/data/vodohod/29/cabins/2.jpg
+ create mode 100644 api/data/vodohod/29/cabins/3.jpg
+ create mode 100644 api/data/vodohod/29/cabins/4.jpg
+ create mode 100644 api/data/vodohod/29/cabins/5.jpg
+ create mode 100644 api/data/vodohod/29/dekplan.gif
+ create mode 100644 api/data/vodohod/3/3.jpg
+ create mode 100644 api/data/vodohod/3/cabins/0.jpg
+ create mode 100644 api/data/vodohod/3/cabins/1.jpg
+ create mode 100644 api/data/vodohod/3/cabins/2.jpg
+ create mode 100644 api/data/vodohod/3/cabins/3.jpg
+ create mode 100644 api/data/vodohod/3/cabins/4.jpg
+ create mode 100644 api/data/vodohod/3/dekplan.gif
+ create mode 100644 api/data/vodohod/32/32.jpg
+ create mode 100644 api/data/vodohod/32/cabins/0.jpg
+ create mode 100644 api/data/vodohod/32/cabins/1.jpg
+ create mode 100644 api/data/vodohod/32/cabins/2.jpg
+ create mode 100644 api/data/vodohod/32/cabins/3.jpg
+ create mode 100644 api/data/vodohod/32/cabins/4.jpg
+ create mode 100644 api/data/vodohod/32/cabins/5.jpg
+ create mode 100644 api/data/vodohod/32/cabins/6.jpg
+ create mode 100644 api/data/vodohod/32/cabins/7.jpg
+ create mode 100644 api/data/vodohod/32/cabins/8.jpg
+ create mode 100644 api/data/vodohod/32/dekplan.gif
+ create mode 100644 api/data/vodohod/37/37.jpg
+ create mode 100644 api/data/vodohod/37/cabins/0.jpg
+ create mode 100644 api/data/vodohod/37/cabins/1.jpg
+ create mode 100644 api/data/vodohod/37/cabins/2.jpg
+ create mode 100644 api/data/vodohod/37/cabins/3.jpg
+ create mode 100644 api/data/vodohod/37/cabins/4.jpg
+ create mode 100644 api/data/vodohod/37/dekplan.gif
+ create mode 100644 api/data/vodohod/4/4.jpg
+ create mode 100644 api/data/vodohod/4/cabins/0.jpg
+ create mode 100644 api/data/vodohod/4/cabins/1.jpg
+ create mode 100644 api/data/vodohod/4/cabins/2.jpg
+ create mode 100644 api/data/vodohod/4/cabins/3.jpg
+ create mode 100644 api/data/vodohod/4/dekplan.gif
+ create mode 100644 api/data/vodohod/42/42.jpg
+ create mode 100644 api/data/vodohod/42/cabins/0.jpg
+ create mode 100644 api/data/vodohod/42/cabins/1.jpg
+ create mode 100644 api/data/vodohod/42/cabins/2.jpg
+ create mode 100644 api/data/vodohod/42/cabins/3.jpg
+ create mode 100644 api/data/vodohod/42/cabins/4.jpg
+ create mode 100644 api/data/vodohod/42/cabins/5.jpg
+ create mode 100644 api/data/vodohod/42/dekplan.gif
+ create mode 100644 api/data/vodohod/50/50.jpg
+ create mode 100644 api/data/vodohod/50/cabins/0.jpg
+ create mode 100644 api/data/vodohod/50/cabins/1.jpg
+ create mode 100644 api/data/vodohod/50/cabins/2.jpg
+ create mode 100644 api/data/vodohod/50/cabins/3.jpg
+ create mode 100644 api/data/vodohod/50/cabins/4.jpg
+ create mode 100644 api/data/vodohod/50/cabins/5.jpg
+ create mode 100644 api/data/vodohod/50/cabins/6.jpg
+ create mode 100644 api/data/vodohod/50/dekplan.gif
+ create mode 100644 api/data/vodohod/6/6.jpg
+ create mode 100644 api/data/vodohod/6/cabins/0.jpg
+ create mode 100644 api/data/vodohod/6/cabins/1.jpg
+ create mode 100644 api/data/vodohod/6/cabins/2.jpg
+ create mode 100644 api/data/vodohod/6/cabins/3.jpg
+ create mode 100644 api/data/vodohod/6/cabins/4.jpg
+ create mode 100644 api/data/vodohod/6/cabins/5.jpg
+ create mode 100644 api/data/vodohod/6/dekplan.gif
+ create mode 100644 api/data/vodohod/69/69.jpg
+ create mode 100644 api/data/vodohod/69/cabins/0.jpg
+ create mode 100644 api/data/vodohod/69/cabins/1.jpg
+ create mode 100644 api/data/vodohod/69/cabins/2.jpg
+ create mode 100644 api/data/vodohod/69/cabins/3.jpg
+ create mode 100644 api/data/vodohod/69/dekplan.gif
+ create mode 100644 api/data/vodohod/7/7.jpg
+ create mode 100644 api/data/vodohod/7/cabins/0.jpg
+ create mode 100644 api/data/vodohod/7/cabins/1.jpg
+ create mode 100644 api/data/vodohod/7/cabins/2.jpg
+ create mode 100644 api/data/vodohod/7/cabins/3.jpg
+ create mode 100644 api/data/vodohod/7/cabins/4.jpg
+ create mode 100644 api/data/vodohod/7/dekplan.gif
+ create mode 100644 api/data/vodohod/90/90.jpg
+ create mode 100644 api/data/vodohod/90/cabins/0.jpg
+ create mode 100644 api/data/vodohod/90/cabins/1.jpg
+ create mode 100644 api/data/vodohod/90/cabins/2.jpg
+ create mode 100644 api/data/vodohod/90/cabins/3.jpg
+ create mode 100644 api/data/vodohod/90/cabins/4.jpg
+ create mode 100644 api/data/vodohod/90/cabins/5.jpg
+ create mode 100644 api/data/vodohod/90/dekplan.gif
+ create mode 100644 api/ships-infoflot.json
+ create mode 100644 api/ships-mosturflot.json
+ create mode 100644 api/ships-vodohod.json
+ create mode 100644 api/test.php
