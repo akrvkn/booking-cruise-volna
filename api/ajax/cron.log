@@ -1,1 +1,4 @@
 Уже обновлено.
+[master 33653809] Updated db 2021-05-09 08:11
+ 3 files changed, 2 insertions(+), 4 deletions(-)
+ rewrite api/ajax/ships.json (62%)
