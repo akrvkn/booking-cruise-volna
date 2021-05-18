@@ -1,1 +1,5 @@
 Уже обновлено.
+[master 16041659] Updated db 2021-05-18 08:11
+ 4 files changed, 3 insertions(+), 5 deletions(-)
+ create mode 100644 api/ajax/cruises-mobile.json
+ rewrite api/ajax/ships.json (69%)
