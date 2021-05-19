@@ -1,1 +1,5 @@
 Уже обновлено.
+[master fcb08ae1] Updated db 2021-05-19 08:11
+ 4 files changed, 3 insertions(+), 7 deletions(-)
+ rewrite api/ajax/cruises-mobile.json (64%)
+ rewrite api/ajax/ships.json (69%)
