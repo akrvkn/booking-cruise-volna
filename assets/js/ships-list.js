@@ -38,7 +38,7 @@ function renderMtfShipsList(ships, images, com){
 
 function renderShipsList(ships, images, com){
     return $.map(ships, function(ship, i) {
-        console.log(ship);
+        //console.log(ship);
         if(images[i] && ship['company'] === 'iff') {
             var li = $('<li>'),
                 img = $('<img>', {'src': images[i], 'width': 150}),
