@@ -20,3 +20,7 @@ Fast-forward
  create mode 100644 assets/images/banners/srv.jpg
  create mode 100644 assets/images/icons/appstore.png
  create mode 100644 assets/images/icons/googleplay.png
+[master 621a3616] Updated db 2021-06-09 08:11
+ 3 files changed, 24 insertions(+), 6 deletions(-)
+ rewrite api/ajax/cron.log (100%)
+ rewrite api/ajax/ships.json (88%)
