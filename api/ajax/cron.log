@@ -1,5 +1,1 @@
 Уже обновлено.
-[master 1c802a1a] Updated db 2021-06-10 08:11
- 3 files changed, 3 insertions(+), 28 deletions(-)
- rewrite api/ajax/cron.log (100%)
- rewrite api/ajax/ships.json (85%)
