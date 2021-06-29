@@ -1,12 +1,9 @@
 RewriteEngine On
-RewriteCond %{HTTP_HOST} !^www\.cruise-volna\.com$ [NC]
-RewriteRule (.*) http://www.cruise-volna.com/$1 [L,R=301]
-
 RewriteBase /
 ErrorDocument 404 /404
 
-#RewriteCond %{HTTP_HOST} ^cruise-volna\.com$ [NC]
-#RewriteRule ^(.*)$ https://www.cruise-volna.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^cruise-volna\.com$ [NC]
+RewriteRule ^(.*)$ https://www.cruise-volna.com/$1 [L,R=301]
 
 RewriteCond %{HTTPS} off
 RewriteCond %{HTTP:X-Forwarded-Proto} !https

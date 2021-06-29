@@ -1,17 +1,9 @@
 User-agent: Yandex
-Allow: /*.js
-Allow: /*.css
-Allow: /*.png$
-Allow: /*.jpg$
 Disallow: /api/
 
 Host: https://www.cruise-volna.com
 
 User-agent: Googlebot
-Allow: /*.js
-Allow: /*.css
-Allow: /*.png$
-Allow: /*.jpg$
 Disallow: /api/
 
 Sitemap: https://www.cruise-volna.com/sitemap.xml
