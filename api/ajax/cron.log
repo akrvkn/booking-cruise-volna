@@ -1,5 +1,5 @@
 Уже обновлено.
-[master f4082698] Updated db 2021-06-29 08:11
+[master de40e7c0] Updated db 2021-06-30 08:10
  3 files changed, 2 insertions(+), 6 deletions(-)
  rewrite api/ajax/cruises.json (62%)
- rewrite api/ajax/ships.json (96%)
+ rewrite api/ajax/ships.json (89%)
