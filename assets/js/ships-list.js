@@ -25,7 +25,7 @@ function renderMtfShipsList(ships, images, com){
     return $.map(ships, function(ship, i) {
         if(images[i]) {
             var li = $('<li>'),
-                img = $('<img>', {'src': images[i], 'width': 150}),
+                img = $('<img>', {'src': '/assets/images/mosturflot/' + i + '.jpg', 'width': 150}),
                 span = $('<span>'),
                 a = $('<a>', { 'href': '/ship?com=' + com + '&ship=' + i, 'html': ship});
             span.append(a);

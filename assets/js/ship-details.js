@@ -126,7 +126,7 @@ moment.locale('ru');
         function renderMTF() {
             var shipid = parseUrlQuery('ship');
             //var tourid = parseUrlQuery('tour');
-            var ship_url = 'https://www.mosturflot.ru/api/ajax/ship.php?shipid=' + shipid;
+            var ship_url = 'https://www.cruise-volna.com/api/ajax/ship.php?shipid=' + shipid;
             //var tour_url = 'https://www.mosturflot.ru/api/ajax/?request=tour&routedetail=true&tariffs=true&loading=true&tourid=' + tourid;
 
             $.getJSON(ship_url)
@@ -180,20 +180,20 @@ moment.locale('ru');
                                     });
 
                                     categories.push(val.cabincategoryname);
-                                    var img = 'www.mosturflot.ru/assets/images/mtf/ships/230x130/cabin.jpg';
+                                    var img = '/assets/images/mosturflot/' + shipid + '/cabins/' + val.cabincategoryid + '.jpg';
                                     var desc = val.cabindesc.replace(/<.*?>/g, '');
 
-
-                                    $.each(val.cabinimages, function (i, el) {
-                                        if (el.image && el.id == 1) {
-                                            img = el.image;
-                                        }
-
-                                    });
+                                    // $.each(val.cabinimages, function (i, el) {
+                                    //     console.log(el);
+                                    //     if (el.image && el.id == 1) {
+                                    //
+                                    //     }
+                                    //
+                                    // });
                                     //console.log(val.cabinimages[Object.keys(val.cabinimages)[0]].image);
                                     //var places = val.cabinplace === undefined ? 0 : val.cabinplace;
                                     cabins[order] = '<tr>' +
-                                        '<td><a href="https://' + img + '" data-lightbox="cabin"><img src="https://' + img + '" alt="' + val.cabincategoryname + '" /></a></td>' +
+                                        '<td><a href="' + img + '" data-lightbox="cabin"><img src="' + img + '" alt="' + val.cabincategoryname + '" /></a></td>' +
                                         '<td><span>' + val.cabincategoryname + '</span></td>' +
                                         '<td><p>' + desc + '</p></td>' +
                                         '</tr>';
