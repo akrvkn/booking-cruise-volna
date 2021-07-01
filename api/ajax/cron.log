@@ -252,3 +252,8 @@ Fast-forward
  create mode 100644 assets/images/mosturflot/92/cabins/276.jpg
  delete mode 100644 yandex_481be58f509b6520.html
  delete mode 100644 yandex_be31b2853fc77628.html
+[master 254c72e3] Updated db 2021-07-01 08:11
+ 3 files changed, 256 insertions(+), 7 deletions(-)
+ rewrite api/ajax/cron.log (100%)
+ rewrite api/ajax/cruises.json (62%)
+ rewrite api/ajax/ships.json (91%)
