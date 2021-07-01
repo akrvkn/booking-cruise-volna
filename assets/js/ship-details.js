@@ -46,6 +46,46 @@ moment.locale('ru');
             }
         };
 
+        function renderIFF() {
+            var shipid = parseUrlQuery('ship');
+            let ship_url = 'https://restapi.infoflot.com/ships/' + shipid + '?key=407c8c353a23a14d40479eb4e4290a8a6d32b06b';
+            const dataSet = [];
+            $.getJSON(ship_url).done(function (ship) {
+                var shipdata = ship;
+                $('.shipname').html('<hr><h2>т/х "' + shipdata['name'] + '"</h2>');
+                $("title").text('Круиз т.х. ' + shipdata['name']);
+                $('.shipimg').html('<img src="' + shipdata['files']['photo']['path'] + '" width="350" />');
+                $('.deckplan').html('<a href="' + shipdata['files']['scheme']['path'] + '" data-lightbox="deckplan"><img src="' + shipdata['files']['scheme']['path'] + '" width="350" /></a>');
+                $('.description').html('<p><br><br>' + shipdata['descriptionBig'] + '</p>');
+
+                var types = [];
+                var co = 0;
+
+                var imgsrc = '/assets/images/flake.png';
+
+                $.each(ship['cabins'], function (i, v) {
+
+                    if (types.indexOf(v.typeId) === -1) {
+                        types.push(v.typeId);
+                        dataSet[co] = {};
+                        var tr = '<tr><td>';
+
+                        if (v['photos']) {
+                            imgsrc = v['photos'].length > 0 ? v['photos'][0]['filename'] : '/assets/images/flake.png';
+                        }
+                        var image = '<img src="' + imgsrc + '" width="150">';
+                        dataSet[co]['imgsrc'] = imgsrc;
+                        dataSet[co]['name'] = v['typeName'];
+                        var desc = v['typeFriendlyName'] === null ? '' : v['typeFriendlyName'];
+                        dataSet[co]['desc'] = v['typeFriendlyName'] === null ? '' : v['typeFriendlyName'];
+                        tr = tr + image + '</td><td>' + v['typeName'] + '</td><td>' + desc + '</td></tr>';
+                        $('#cabins').append(tr);
+                        co++;
+                    }
+                });
+            });
+        }
+
         function renderDetails() {
             var shipid = parseUrlQuery('ship');
             //var tourid = parseUrlQuery('tour');
@@ -53,12 +93,14 @@ moment.locale('ru');
             var ships_img = '/api/ajax/shipsimages.json';
             var deck_img = '/api/ajax/schemes.json';
             var desc_url = '/api/data/' + shipid + '/cabins.json';
+            var cabins_url = 'https://restapi.infoflot.com/ships/' + shipid + '?key=407c8c353a23a14d40479eb4e4290a8a6d32b06b';
             //var tours_url = 'api/db/data/' + shipid + '/tours.json';
             //var route_url = 'api/db/data/' + shipid + '/' + tourid + '.json';
 
 
             $.getJSON(ships_url)
                 .done(function (data) {
+                    console.log(data[shipid]);
                     $('.shipname').html('<hr><h2>т/х "' + data[shipid] + '"</h2>');
                     $('title').text('т/х "' + data[shipid] + '"');
                     $("input[name='ship']").val(data[shipid]);
@@ -82,13 +124,15 @@ moment.locale('ru');
                         "ajax": {
                             "url": cabins_url,
                             "dataSrc": function (db) {
-                                var json = db.data;
+                                var json = db.cabins;
                                 var data = [];
+                                var cab = {};
                                 for (var key in json) {
-                                    if (json.hasOwnProperty(key)) {
-                                        //json[key].price = '';
-                                        //json[key].places = '';
-                                        data.push(json[key]);
+                                    if (json.hasOwnProperty('typeId')) {
+                                        cab['img'] = json['photos'][0].filename;
+                                        cab['type'] = json['typeName'];
+                                        cab['desc'] = json['cabinDescription'];
+                                        data.push(cab);
                                     }
                                 }
 
@@ -216,8 +260,8 @@ moment.locale('ru');
             case 'mtf':
                 renderMTF();
                 break;
-            case 'inf':
-                renderDetails();
+            case 'iff':
+                renderIFF();
                 break;
             default:
                 break;

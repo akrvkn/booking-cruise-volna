@@ -27,9 +27,10 @@ function renderMtfShipsList(ships, images, com){
             var li = $('<li>'),
                 img = $('<img>', {'src': '/assets/images/mosturflot/' + i + '.jpg', 'width': 150}),
                 span = $('<span>'),
-                a = $('<a>', { 'href': '/ship?com=' + com + '&ship=' + i, 'html': ship});
+                a = $('<a>', { 'href': '/ship?com=' + com + '&ship=' + i, 'html': ship}),
+                ai = $('<a>', { 'href': '/ship?com=' + com + '&ship=' + i, 'html': img});
             span.append(a);
-            li.append(img);
+            li.append(ai);
             li.append(span);
             ul.append(li);
         }
@@ -43,9 +44,10 @@ function renderShipsList(ships, images, com){
             var li = $('<li>'),
                 img = $('<img>', {'src': images[i], 'width': 150}),
                 span = $('<span>'),
-                a = $('<a>', { 'href': '/ship?com=' + ship['company'] + '&ship=' + ship['shipid'], 'html': ship['shipname']});
+                a = $('<a>', { 'href': '/ship?com=' + ship['company'] + '&ship=' + ship['shipid'], 'html': ship['shipname']}),
+                ai = $('<a>', { 'href': '/ship?com=' + ship['company'] + '&ship=' + ship['shipid'], 'html': img});
             span.append(a);
-            li.append(img);
+            li.append(ai);
             li.append(span);
             ul.append(li);
         }

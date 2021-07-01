@@ -8,7 +8,7 @@ email: support@superuser.su
 baseurl: /
 include:
   - _pages
-exclude: [LICENSE.txt, README.md]
+exclude: [LICENSE.txt, README.md, api]
 link: "https://www.cruise-volna.com"
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
