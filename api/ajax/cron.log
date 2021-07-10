@@ -24,3 +24,8 @@ Fast-forward
  create mode 100644 api/infoflot/571.json
  create mode 100644 api/infoflot/7.json
  create mode 100644 api/infoflot/83.json
+[master e918672a] Updated db 2021-07-10 08:11
+ 3 files changed, 28 insertions(+), 7 deletions(-)
+ rewrite api/ajax/cron.log (100%)
+ rewrite api/ajax/cruises.json (85%)
+ rewrite api/ajax/ships.json (82%)
