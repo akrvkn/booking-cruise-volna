@@ -1,6 +1,1 @@
 Уже обновлено.
-[master f32d4102] Updated db 2021-07-11 08:11
- 3 files changed, 3 insertions(+), 33 deletions(-)
- rewrite api/ajax/cron.log (100%)
- rewrite api/ajax/cruises.json (61%)
- rewrite api/ajax/ships.json (86%)
