@@ -1,1 +1,5 @@
 Уже обновлено.
+[master 9b405af2] Updated db 2021-07-14 08:11
+ 3 files changed, 2 insertions(+), 6 deletions(-)
+ rewrite api/ajax/cruises.json (63%)
+ rewrite api/ajax/ships.json (95%)
