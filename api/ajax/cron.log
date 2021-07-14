@@ -1,5 +1,1 @@
 Уже обновлено.
-[master acc94ca3] Updated db 2021-07-13 08:10
- 3 files changed, 2 insertions(+), 6 deletions(-)
- rewrite api/ajax/cruises.json (64%)
- rewrite api/ajax/ships.json (74%)
