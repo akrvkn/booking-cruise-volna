@@ -74,3 +74,8 @@ Fast-forward
  create mode 100644 api/vodohod/69.json
  create mode 100644 api/vodohod/7.json
  create mode 100644 api/vodohod/90.json
+[master c833ac4b] Updated db 2021-07-18 08:10
+ 3 files changed, 78 insertions(+), 7 deletions(-)
+ rewrite api/ajax/cron.log (100%)
+ rewrite api/ajax/cruises.json (63%)
+ rewrite api/ajax/ships.json (94%)
