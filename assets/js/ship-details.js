@@ -226,16 +226,6 @@ moment.locale('ru');
                                     categories.push(val.cabincategoryname);
                                     var img = '/assets/images/mosturflot/' + shipid + '/cabins/' + val.cabincategoryid + '.jpg';
                                     var desc = val.cabindesc.replace(/<.*?>/g, '');
-
-                                    // $.each(val.cabinimages, function (i, el) {
-                                    //     console.log(el);
-                                    //     if (el.image && el.id == 1) {
-                                    //
-                                    //     }
-                                    //
-                                    // });
-                                    //console.log(val.cabinimages[Object.keys(val.cabinimages)[0]].image);
-                                    //var places = val.cabinplace === undefined ? 0 : val.cabinplace;
                                     cabins[order] = '<tr>' +
                                         '<td><a href="' + img + '" data-lightbox="cabin"><img src="' + img + '" alt="' + val.cabincategoryname + '" /></a></td>' +
                                         '<td><span>' + val.cabincategoryname + '</span></td>' +
@@ -255,6 +245,60 @@ moment.locale('ru');
                 });
         }
 
+        function renderDon(){
+            var shipid = parseUrlQuery('ship');
+            var ship_url = '/api/ajax/don-ships.json';
+            var cabins_url = '/api/ajax/don-cabins.json';
+            var type_arr = ['Стандарт 2M', 'Стандарт 1M', 'Стандарт 4M', 'Люкс 2М+', 'Люкс двухкомнатный 2М+'];
+            var cabins = [];
+
+            $.getJSON(ship_url)
+                .done(function (data) {
+                    $.each(data['DATA'], function (i, v) {
+                        if(v['CODE'] === shipid) {
+                            var summary = '<li><label>Теплоход:</label>' + v['NAME'] + '</li><li><label>Кают:</label>' + v['CABIN_COUNT'] + '</li>';
+                            $('#summary').html(summary);
+                            var titleimage = '<img src="' + v['MAIN_VIEW'][0]['IMAGE']['URL'] + '" width="483" />';
+                            $('.shipimg').html(titleimage);
+                            $('.shipname').html('<hr><h2>т/х "' + v['NAME'] + '"</h2>');
+                            $('title').text('т/х "' + v['NAME'] + '"');
+                            var desc = v['FULL_DESCRIPTION'].replace(/<a.*?>.*<\/a>/g, '');
+                            desc = desc.replace(/<.*?>/g, '');
+                            $('.deckplan').html('<a href="' + v['SCHEMA']['IMAGE']['URL'] + '" data-lightbox="deckplan"><img src="' + v['SCHEMA']['IMAGE']['URL'] + '" width="350" /></a>');
+                            $('.description').html('<p><br><br>' + desc + '</p>');
+                        }
+
+                    });
+
+                });
+            var cabins_count = [];
+            $.getJSON(cabins_url)
+                .done(function (data) {
+                    $.each(data['DATA'], function(key, val){
+                        //console.log(val['NAME']);
+                        if(type_arr.indexOf(val['NAME']) !== -1 && cabins_count.indexOf(val['NAME']) === -1){
+                            //console.log(val['NAME']);
+                            cabins_count.push(val['NAME']);
+                            cabins[val['ID']] = '<tr>' +
+                                '<td><a href="' + val['IMAGES'][0]['URL'] + '" data-lightbox="cabin"><img src="' + val['IMAGES'][0]['URL'] + '" alt="' + val['NAME'] + '" /></a></td>' +
+                                '<td><span>' + val['NAME'] + '</span></td>' +
+                                '<td><p>' + val['DESCRIPTION'] + '</p></td>' +
+                                '</tr>';
+                        }
+                    });
+
+                    var table = '<table class="table table-striped table-bordered">';
+                    $.each(cabins, function (m, n) {
+                        if (n !== undefined) {
+                            table += n;
+                        }
+                    });
+
+                    $('.cabins').html(table + '</table>');
+
+                });
+        }
+
         var com = parseUrlQuery('com');
         switch(com){
             case 'mtf':
@@ -262,6 +306,9 @@ moment.locale('ru');
                 break;
             case 'iff':
                 renderIFF();
+                break;
+            case 'don':
+                renderDon();
                 break;
             default:
                 break;
