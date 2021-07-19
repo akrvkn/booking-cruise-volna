@@ -11,3 +11,8 @@ Fast-forward
  create mode 100644 api/ajax/api-don.php
  create mode 100644 api/ajax/don-cabins.json
  create mode 100644 api/ajax/don-ships.json
+[master 5aba15a8] Updated db 2021-07-19 08:10
+ 3 files changed, 15 insertions(+), 83 deletions(-)
+ rewrite api/ajax/cron.log (99%)
+ rewrite api/ajax/cruises.json (64%)
+ rewrite api/ajax/ships.json (95%)
