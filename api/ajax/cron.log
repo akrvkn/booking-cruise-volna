@@ -1,1 +1,6 @@
 Уже обновлено.
+[master 7aaeb8a2] Updated db 2021-07-20 08:10
+ 3 files changed, 3 insertions(+), 20 deletions(-)
+ rewrite api/ajax/cron.log (100%)
+ rewrite api/ajax/cruises.json (64%)
+ rewrite api/ajax/ships.json (85%)
