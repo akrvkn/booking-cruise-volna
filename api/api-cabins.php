@@ -16,7 +16,49 @@ $mosturflot_api = 'https://api.mosturflot.ru/v3/rivercruises/ships/';
 $mtf_include = '?include=cabins,cabin-categories';
 $mtf_ships = [5, 14, 19, 36, 72, 91, 92, 139, 150, 198, 200, 206, 207, 247];
 
-/**************
+/***************************
+$iff_deckplan = [];
+foreach( $iff_ships as $iff_ship){
+    $iff_ship_data = json_decode(file_get_contents($infoflot_api.$iff_ship.$iff_key), true);
+    foreach($iff_ship_data['decks'] as $deck){
+        if(!isset($iff_deckplan[$iff_ship_data['name']] )){
+            $iff_deckplan[$iff_ship_data['name']] = [];
+        }
+        $iff_deckplan[$iff_ship_data['name']][$deck['position']] = $deck['name'];
+    }
+    ksort($iff_deckplan[$iff_ship_data['name']]);
+    $arr = [];
+    foreach($iff_deckplan[$iff_ship_data['name']] as $k=>$v){
+        $arr[] = $v;
+    }
+    $iff_deckplan[$iff_ship_data['name']] = $arr;
+}
+//file_put_contents('infoflot/decks.json', json_encode($iff_deckplan, JSON_UNESCAPED_UNICODE));
+
+*************************/
+
+
+$vdh_deckplan = [];
+foreach( $vdh_ships_data as $vdh_ship){
+    $ship_data = json_decode(file_get_contents($vodohod_api.$vdh_ship['id']), true);
+    $vdh_deck = [];
+    foreach($ship_data as $vdh_cabin){
+        $vdh_deck[$vdh_cabin['deckId']] = $vdh_cabin['deckName'];
+    }
+    krsort($vdh_deck);
+    $arr = [];
+    foreach($vdh_deck as $k=>$v){
+        $arr[] = $v;
+    }
+
+    $vdh_deckplan[$vdh_ship['name']] = $arr;
+}
+
+file_put_contents('vodohod/decks.json', json_encode($vdh_deckplan, JSON_UNESCAPED_UNICODE));
+
+
+
+/**************************************************
 $iff_decks = [];
 foreach( $iff_ships as $iff_ship){
     $iff_ship_data = json_decode(file_get_contents($infoflot_api.$iff_ship.$iff_key), true);
@@ -42,7 +84,7 @@ foreach( $iff_ships as $iff_ship){
 foreach($iff_decks as $key => $val){
   file_put_contents('infoflot/'.$key.'.json', json_encode($val, JSON_UNESCAPED_UNICODE));
 }
-******/
+
 
 $vdh_decks = [];
 
@@ -66,7 +108,6 @@ foreach($vdh_decks as $key => $val){
 }
 
 
-/**********
 $mtf_decks = [];
 
 foreach( $mtf_ships as $mtf_ship){
@@ -92,5 +133,5 @@ foreach( $mtf_ships as $mtf_ship){
 foreach($mtf_decks as $key => $val){
     file_put_contents('mosturflot/'.$key.'.json', json_encode($val, JSON_UNESCAPED_UNICODE));
 }
-******/
+*************************/
 ?>
