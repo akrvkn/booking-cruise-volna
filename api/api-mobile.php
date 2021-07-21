@@ -16,9 +16,25 @@ $total = 0;
 
 $today = date("Y-m-d");
 
+function getContents($url){
+    $ch = curl_init();
+    curl_setopt ($ch, CURLOPT_URL, $url);
+    curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, 5);
+    curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+    $contents = curl_exec($ch);
+    if (curl_errno($ch)) {
+       echo curl_error($ch);
+       echo "\n<br />";
+    $contents = '';
+    } else {
+    curl_close($ch);
+    }
+    return $contents;
+}
+
 
 $mtf_ships_url = 'https://api.mosturflot.ru/v3/rivercruises/ships?filter[is-own]=1';
-$mtf_ships_list = json_decode(file_get_contents($mtf_ships_url));
+$mtf_ships_list = json_decode(getContents($mtf_ships_url));
 $mtf_images = [];
 $mtf_names = [];
 $mtf_titles = [];
@@ -30,12 +46,12 @@ $filterMtf = '&filter[ship-id][in][]=5&filter[ship-id][in][]=14&filter[ship-id][
 
 //https://api.mosturflot.ru/v3/rivercruises/tours?filter[start][gte]=2021-07-20T00:00:00Z
 
-$mtf_cruises = json_decode(file_get_contents('https://api.mosturflot.ru/v3/rivercruises/tours?filter[start][gte]='.$now.'T00:00:00Z'.$filterMtf.'&per-page=1000'), true);
+$mtf_cruises = json_decode(getContents('https://api.mosturflot.ru/v3/rivercruises/tours?filter[start][gte]='.$now.'T00:00:00Z'.$filterMtf.'&per-page=1000'), true);
 
 $mtf_prices = 'https://api.mosturflot.ru/v3/rivercruises/tours/5943/tour-rates';
 
 foreach($mtf_cruises['data'] as $key=>$val){
-    $table[$counter]['company'] = 'mtf';
+    $table[$counter]['company'] = 'mosturflot';
     $table[$counter]['shipid'] = $val['attributes']['ship-id'];
     $table[$counter]['shipname'] = $mtf_names[$val['attributes']['ship-id']];
     $table[$counter]['tourid'] = (int)$val['id'];
@@ -47,10 +63,14 @@ foreach($mtf_cruises['data'] as $key=>$val){
     //$table[$counter]['tourcabinsfree'] = '';
 
     $prices = [];
-    $price_list = json_decode(file_get_contents('https://api.mosturflot.ru/v3/rivercruises/tours/'.$val['id'].'/tour-rates'), true);
+    $price_list = json_decode(getContents('https://api.mosturflot.ru/v3/rivercruises/tours/'.$val['id'].'/tour-rates'), true);
     foreach($price_list['data'] as $price){
+        $cat_link = 'https://api.mosturflot.ru/v3/rivercruises/cabin-categories/'.$price['attributes']['category-id'];
+
+        $cat = json_decode(getContents($cat_link), true);
+
         if(isset($price['attributes']['category-id']) && isset($price['attributes']['price-main']) && $price['attributes']['rate-id'] == 'adult'){
-            $prices['"'.$price['attributes']['category-id'].'"'] = $price['attributes']['price-main'];
+            $prices[$cat['data']['attributes']['name']] = $price['attributes']['price-main'];
         }
     }
     $table[$counter]['pricelist'] = $prices;
@@ -58,21 +78,22 @@ foreach($mtf_cruises['data'] as $key=>$val){
 }
 
 
+
 //12055
 $vdh_prices = 'https://api.vodohod.com/json/v2/cruise-prices.php?pauth=v2-ba9fab12d2c4b8d005645d04492a7af7&cruise=';
 
 $vdh_days = 'https://api.vodohod.com/json/v2/cruise-days.php?pauth=v2-ba9fab12d2c4b8d005645d04492a7af7&cruise=';
 
-$vodohodApi = json_decode(file_get_contents('https://api.vodohod.com/json/v2/cruises.php?pauth=v2-ba9fab12d2c4b8d005645d04492a7af7'), true);
+$vodohodApi = json_decode(getContents('https://api.vodohod.com/json/v2/cruises.php?pauth=v2-ba9fab12d2c4b8d005645d04492a7af7'), true);
 foreach( $vodohodApi as $vdh_ship_cruise ){
 
     if( $today < $vdh_ship_cruise['dateStart']) {
-        $cruise_days = json_decode(file_get_contents($vdh_days.$vdh_ship_cruise['id']), true);
+        $cruise_days = json_decode(getContents($vdh_days.$vdh_ship_cruise['id']), true);
         $route = '';
         foreach($cruise_days as $day){
             $route .= $day['portName'].' - ';
         }
-        $table[$counter]['company'] = 'vdh';
+        $table[$counter]['company'] = 'vodohod';
         $table[$counter]['shipid'] = $vdh_ship_cruise['motorshipId'];
         $table[$counter]['shipname'] = $vdh_ship_cruise['motorshipName'];
         $table[$counter]['tourid'] = $vdh_ship_cruise['id'];
@@ -84,7 +105,7 @@ foreach( $vodohodApi as $vdh_ship_cruise ){
 
 
         $prices = [];
-        $price_list = json_decode(file_get_contents($vdh_prices.$vdh_ship_cruise['id']), true);
+        $price_list = json_decode(getContents($vdh_prices.$vdh_ship_cruise['id']), true);
         foreach($price_list['tariffs'][0]['prices'] as $price){
                 $prices[$price['rt_name']] = $price['price_value'];
         }
@@ -97,14 +118,14 @@ foreach( $vodohodApi as $vdh_ship_cruise ){
 
 //Infoflot
 
-$firstPage = json_decode(file_get_contents($cruises_base), true);
+$firstPage = json_decode(getContents($cruises_base), true);
 $total = $firstPage['pagination']['records']['total'];
 $page = $firstPage['pagination']['pages']['next']['number'];
 $pages = $firstPage['pagination']['pages']['total'];
 
 foreach( $firstPage['data'] as $pageData) {
     //if(!in_array($pageData['ship']['name'], $vdh_names)){
-        $table[$counter]['company'] = 'iff';
+        $table[$counter]['company'] = 'infoflot';
         $table[$counter]['shipid'] = $pageData['ship']['id'];
         $table[$counter]['shipname'] = $pageData['ship']['name'];
         $table[$counter]['tourid'] = $pageData['id'];
@@ -117,7 +138,7 @@ foreach( $firstPage['data'] as $pageData) {
 
         $iff_prices_url = 'https://restapi.infoflot.com/cruises/'.$pageData['id'].'/cabins?key=407c8c353a23a14d40479eb4e4290a8a6d32b06b';
         $prices = [];
-        $price_list = json_decode(file_get_contents($iff_prices_url), true);
+        $price_list = json_decode(getContents($iff_prices_url), true);
         foreach($price_list['prices'] as $price){
             $prices[$price['type_name']] = $price['prices']['main_bottom']['adult'];
         }
@@ -130,12 +151,12 @@ foreach( $firstPage['data'] as $pageData) {
 for($i=0; $i < $pages; $i++){
     //echo $page."\n";
     if($page < $pages){
-        $nextPage = json_decode(@file_get_contents($cruises_base.'&page='.$page), true);
+        $nextPage = json_decode(@getContents($cruises_base.'&page='.$page), true);
         $page = $nextPage['pagination']['pages']['next']['number'];
 
         if($nextPage){
             foreach( $nextPage['data'] as $pageData) {
-                    $table[$counter]['company'] = 'iff';
+                    $table[$counter]['company'] = 'infoflot';
                     $table[$counter]['shipid'] = $pageData['ship']['id'];
                     $table[$counter]['shipname'] = $pageData['ship']['name'];
                     $table[$counter]['tourid'] = $pageData['id'];
@@ -148,7 +169,7 @@ for($i=0; $i < $pages; $i++){
 
                     $iff_prices_url = 'https://restapi.infoflot.com/cruises/'.$pageData['id'].'/cabins?key=407c8c353a23a14d40479eb4e4290a8a6d32b06b';
                     $prices = [];
-                    $price_list = json_decode(file_get_contents($iff_prices_url), true);
+                    $price_list = json_decode(getContents($iff_prices_url), true);
                     foreach($price_list['prices'] as $price){
                         $prices[$price['type_name']] = $price['prices']['main_bottom']['adult'];
                     }
@@ -159,6 +180,7 @@ for($i=0; $i < $pages; $i++){
         }
     }
 }
+
 
 usort($table, function($a, $b){
     return $a['tourstart'] <=> $b['tourstart'];
