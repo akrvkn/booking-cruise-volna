@@ -69,8 +69,8 @@ foreach($mtf_cruises['data'] as $key=>$val){
 
         $cat = json_decode(getContents($cat_link), true);
 
-        if(isset($price['attributes']['category-id']) && isset($price['attributes']['price-main']) && $price['attributes']['rate-id'] == 'adult'){
-            $prices[$cat['data']['attributes']['name']] = $price['attributes']['price-main'];
+        if(isset($cat['data']) && isset($price['attributes']['category-id']) && isset($price['attributes']['price-main']) && $price['attributes']['rate-id'] == 'adult'){
+            $prices['"'.$cat['data']['attributes']['name'].'"'] = $price['attributes']['price-main'];
         }
     }
     $table[$counter]['pricelist'] = $prices;
@@ -90,28 +90,30 @@ foreach( $vodohodApi as $vdh_ship_cruise ){
     if( $today < $vdh_ship_cruise['dateStart']) {
         $cruise_days = json_decode(getContents($vdh_days.$vdh_ship_cruise['id']), true);
         $route = '';
-        foreach($cruise_days as $day){
-            $route .= $day['portName'].' - ';
+        if(count($cruise_days) > 0){
+            foreach($cruise_days as $day){
+                $route .= $day['portName'].' - ';
+            }
+            $table[$counter]['company'] = 'vodohod';
+            $table[$counter]['shipid'] = $vdh_ship_cruise['motorshipId'];
+            $table[$counter]['shipname'] = $vdh_ship_cruise['motorshipName'];
+            $table[$counter]['tourid'] = $vdh_ship_cruise['id'];
+            $table[$counter]['tourstart'] = $vdh_ship_cruise['dateStart'];
+            $table[$counter]['tourfinish'] = $vdh_ship_cruise['dateStop'];
+            $table[$counter]['tourroute'] = substr($route, 0, -3);
+            $table[$counter]['tourdays'] = $vdh_ship_cruise['days'];
+            $table[$counter]['tourminprice'] = intval((float)$vdh_ship_cruise['priceMin']);
+
+
+            $prices = [];
+            $price_list = json_decode(getContents($vdh_prices.$vdh_ship_cruise['id']), true);
+            foreach($price_list['tariffs'][0]['prices'] as $price){
+                    $prices[$price['rt_name']] = $price['price_value'];
+            }
+            $table[$counter]['pricelist'] = $prices;
+
+            $counter++;
         }
-        $table[$counter]['company'] = 'vodohod';
-        $table[$counter]['shipid'] = $vdh_ship_cruise['motorshipId'];
-        $table[$counter]['shipname'] = $vdh_ship_cruise['motorshipName'];
-        $table[$counter]['tourid'] = $vdh_ship_cruise['id'];
-        $table[$counter]['tourstart'] = $vdh_ship_cruise['dateStart'];
-        $table[$counter]['tourfinish'] = $vdh_ship_cruise['dateStop'];
-        $table[$counter]['tourroute'] = substr($route, 0, -3);
-        $table[$counter]['tourdays'] = $vdh_ship_cruise['days'];
-        $table[$counter]['tourminprice'] = intval((float)$vdh_ship_cruise['priceMin']);
-
-
-        $prices = [];
-        $price_list = json_decode(getContents($vdh_prices.$vdh_ship_cruise['id']), true);
-        foreach($price_list['tariffs'][0]['prices'] as $price){
-                $prices[$price['rt_name']] = $price['price_value'];
-        }
-        $table[$counter]['pricelist'] = $prices;
-
-        $counter++;
     }
 }
 
