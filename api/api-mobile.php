@@ -35,7 +35,7 @@ $mtf_cruises = json_decode(file_get_contents('https://api.mosturflot.ru/v3/river
 $mtf_prices = 'https://api.mosturflot.ru/v3/rivercruises/tours/5943/tour-rates';
 
 foreach($mtf_cruises['data'] as $key=>$val){
-    $table[$counter]['company'] = 'mtf';
+    $table[$counter]['company'] = 'mosturflot';
     $table[$counter]['shipid'] = $val['attributes']['ship-id'];
     $table[$counter]['shipname'] = $mtf_names[$val['attributes']['ship-id']];
     $table[$counter]['tourid'] = (int)$val['id'];
@@ -72,7 +72,7 @@ foreach( $vodohodApi as $vdh_ship_cruise ){
         foreach($cruise_days as $day){
             $route .= $day['portName'].' - ';
         }
-        $table[$counter]['company'] = 'vdh';
+        $table[$counter]['company'] = 'vodohod';
         $table[$counter]['shipid'] = $vdh_ship_cruise['motorshipId'];
         $table[$counter]['shipname'] = $vdh_ship_cruise['motorshipName'];
         $table[$counter]['tourid'] = $vdh_ship_cruise['id'];
@@ -104,7 +104,7 @@ $pages = $firstPage['pagination']['pages']['total'];
 
 foreach( $firstPage['data'] as $pageData) {
     //if(!in_array($pageData['ship']['name'], $vdh_names)){
-        $table[$counter]['company'] = 'iff';
+        $table[$counter]['company'] = 'infoflot';
         $table[$counter]['shipid'] = $pageData['ship']['id'];
         $table[$counter]['shipname'] = $pageData['ship']['name'];
         $table[$counter]['tourid'] = $pageData['id'];
@@ -135,7 +135,7 @@ for($i=0; $i < $pages; $i++){
 
         if($nextPage){
             foreach( $nextPage['data'] as $pageData) {
-                    $table[$counter]['company'] = 'iff';
+                    $table[$counter]['company'] = 'infoflot';
                     $table[$counter]['shipid'] = $pageData['ship']['id'];
                     $table[$counter]['shipname'] = $pageData['ship']['name'];
                     $table[$counter]['tourid'] = $pageData['id'];
