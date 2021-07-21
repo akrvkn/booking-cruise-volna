@@ -108,7 +108,10 @@ foreach( $vodohodApi as $vdh_ship_cruise ){
             $prices = [];
             $price_list = json_decode(getContents($vdh_prices.$vdh_ship_cruise['id']), true);
             foreach($price_list['tariffs'][0]['prices'] as $price){
-                    $prices[$price['rt_name']] = $price['price_value'];
+                    $patterns = array ('/\s+\*+/', '/\s+каюта/', '/\s+одноярусная/');
+                    $replace = array ('', '', '');
+                    $cat_name = preg_replace($patterns, $replace, $price['rt_name']);
+                    $prices[$cat_name] = $price['price_value'];
             }
             $table[$counter]['pricelist'] = $prices;
 
