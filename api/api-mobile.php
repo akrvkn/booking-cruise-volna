@@ -70,7 +70,7 @@ foreach($mtf_cruises['data'] as $key=>$val){
         $cat = json_decode(getContents($cat_link), true);
 
         if(isset($cat['data']) && isset($price['attributes']['category-id']) && isset($price['attributes']['price-main']) && $price['attributes']['rate-id'] == 'adult'){
-            $prices['"'.$cat['data']['attributes']['name'].'"'] = $price['attributes']['price-main'];
+            $prices[$cat['data']['attributes']['name']] = $price['attributes']['price-main'];
         }
     }
     $table[$counter]['pricelist'] = $prices;
